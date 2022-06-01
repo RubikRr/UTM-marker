@@ -22,10 +22,9 @@ namespace UTM_marker
             
 
         }
-        public string AddUTMmark(string url)
+        public void AddUTMmark(string url)
         {
             Link= $"{url}?utm_source={Source}&utm_medium={Medium}&utm_campaign={Campaign}";
-            return Link;
         }
     }
 }

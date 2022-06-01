@@ -12,21 +12,13 @@ namespace UTM_marker
 {
     public partial class Courses : Form
     {
+        List<Course> CoursesWithLinks=new List<Course>();
         public Courses()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-
-        private void Courses_SizeChanged(object sender, EventArgs e)
-        {
-            //ButtonCentre(CreateCourse, this.Height - 75);
-        }
-        public void ButtonCentre(Button button,int y)
-        {
-            //button.Location = new Point((this.Width - button.Width) / 2, y);
-        }
 
         private void CreateCourse_Click(object sender, EventArgs e)
         {

@@ -79,6 +79,7 @@
             this.CreateUtmLinks.TabIndex = 4;
             this.CreateUtmLinks.Text = "Create links";
             this.CreateUtmLinks.UseVisualStyleBackColor = true;
+            this.CreateUtmLinks.Click += new System.EventHandler(this.CreateUtmLinks_Click);
             // 
             // CourseLabel
             // 
@@ -114,6 +115,7 @@
             this.MinimumSize = new System.Drawing.Size(730, 475);
             this.Name = "UtmCreator";
             this.Text = "UtmCreator";
+            this.Load += new System.EventHandler(this.UtmCreator_Load);
             this.SizeChanged += new System.EventHandler(this.UtmCreator_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
