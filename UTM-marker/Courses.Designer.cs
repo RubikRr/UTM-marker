@@ -210,6 +210,7 @@
             this.MinimumSize = new System.Drawing.Size(815, 480);
             this.Name = "Courses";
             this.Text = "Courses";
+            this.Load += new System.EventHandler(this.Courses_Load);
             this.WebsitesWithURL.ResumeLayout(false);
             this.WebsitesWithURL.PerformLayout();
             this.ResumeLayout(false);

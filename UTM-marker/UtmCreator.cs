@@ -14,6 +14,7 @@ namespace UTM_marker
 {
     public partial class UtmCreator : Form
     {
+        List<Course> courses = new List<Course>();
         List<Website> websites = new List<Website>();
         public UtmCreator()
         {
@@ -44,12 +45,15 @@ namespace UTM_marker
                 site.UTMparam.AddUTMmark(url);
             }
             var course = new Course(courseName, url, websites);
-            File.WriteAllText(@"..\..\..\jsons\course.json", JsonConvert.SerializeObject(course));
+            courses.Add(course);
+            courses.Add(course);
+            File.WriteAllText(@"..\..\..\jsons\course.json", JsonConvert.SerializeObject(courses));
             using (StreamWriter file = File.CreateText(@"..\..\..\jsons\course.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, course);
+                serializer.Serialize(file, courses);
             }
+           
         }
 
         private void UtmCreator_Load(object sender, EventArgs e)
