@@ -67,6 +67,7 @@
             this.CoursesList.Name = "CoursesList";
             this.CoursesList.Size = new System.Drawing.Size(154, 403);
             this.CoursesList.TabIndex = 1;
+            this.CoursesList.SelectedIndexChanged += new System.EventHandler(this.CoursesList_SelectedIndexChanged);
             // 
             // VkUrl
             // 

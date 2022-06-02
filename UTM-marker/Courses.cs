@@ -24,21 +24,45 @@ namespace UTM_marker
 
         private void CreateCourse_Click(object sender, EventArgs e)
         {
-            var utmForm = new UtmCreator();
+            var utmForm = new UtmCreator(CoursesWithLinks,CoursesList);
             utmForm.Show();
         }
 
         private void Courses_Load(object sender, EventArgs e)
         {
-            CoursesWithLinks  = JsonConvert.DeserializeObject<List<Course>>(File.ReadAllText(@"..\..\..\jsons\course.json"));
-
-            // deserialize JSON directly from a file
             using (StreamReader file = File.OpenText(@"..\..\..\jsons\course.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 CoursesWithLinks = (List<Course>)serializer.Deserialize(file, typeof(List<Course>));
             }
-            Console.WriteLine(CoursesWithLinks[1].Name);
+            foreach (Course course in CoursesWithLinks)
+            {
+                CoursesList.Items.Add(course.Name);
+            }
+           
+        }
+
+        private void CoursesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var courseName = CoursesList.SelectedItem;
+            Course courseSel=null;
+            foreach (var courseWithLink in CoursesWithLinks)
+            {
+                if (courseWithLink.Name == courseName)
+                {
+                    courseSel = courseWithLink;
+                    break;
+                }
+            }
+            int i = 0;
+            foreach (var web in courseSel.Websites)
+            {
+                string webName = web.Name;
+                string url = web.UTMparam.Link;
+                WebsitesWithURL.GetControlFromPosition(0, i).Text=webName;
+                WebsitesWithURL.GetControlFromPosition(1, i).Text = url;
+                i++;
+            }
         }
     }
 }

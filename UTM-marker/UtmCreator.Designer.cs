@@ -116,7 +116,6 @@
             this.Name = "UtmCreator";
             this.Text = "UtmCreator";
             this.Load += new System.EventHandler(this.UtmCreator_Load);
-            this.SizeChanged += new System.EventHandler(this.UtmCreator_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

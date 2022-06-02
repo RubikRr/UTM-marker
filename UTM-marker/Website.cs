@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UTM_marker
 {
-    internal class Website
+    public class Website
     {
         public string Name { get; }
         public UtmLink UTMparam { get; }

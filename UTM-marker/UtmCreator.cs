@@ -14,45 +14,42 @@ namespace UTM_marker
 {
     public partial class UtmCreator : Form
     {
-        List<Course> courses = new List<Course>();
+        public List<Course> CoursesWithUrls { get; set; }
         List<Website> websites = new List<Website>();
-        public UtmCreator()
+        ListBox CoursesList = new ListBox();
+        public UtmCreator(List<Course> coursesWithUrls,ListBox coursesList)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+           CoursesWithUrls = coursesWithUrls;
+           CoursesList = coursesList;
         }
-
+       
 
        
 
-        private void UtmCreator_SizeChanged(object sender, EventArgs e)
-        {
-            //ButtonCentre(CreateUtmLinks,this.Height-CreateUtmLinks.Height*2);
-        }
+        
 
-        public void ButtonCentre(Button button, int y)
-        {
-            button.Location = new Point((this.Width - button.Width) / 2, y);
-        }
+       
 
         private void CreateUtmLinks_Click(object sender, EventArgs e)
         {
             string courseName = Course.Text;
             string url = Link.Text;
-            
+            CoursesList.Items.Add(courseName);
             foreach (var site in websites)
             {
                 site.UTMparam.AddUTMmark(url);
             }
             var course = new Course(courseName, url, websites);
-            courses.Add(course);
-            courses.Add(course);
-            File.WriteAllText(@"..\..\..\jsons\course.json", JsonConvert.SerializeObject(courses));
+            CoursesWithUrls.Add(course);
+            File.WriteAllText(@"..\..\..\jsons\course.json", JsonConvert.SerializeObject(CoursesWithUrls));
             using (StreamWriter file = File.CreateText(@"..\..\..\jsons\course.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, courses);
+                serializer.Serialize(file, CoursesWithUrls);
             }
+
            
         }
 
