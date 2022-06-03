@@ -30,6 +30,11 @@ namespace UTM_marker
 
         private void Courses_Load(object sender, EventArgs e)
         {
+
+            for (int i = 0; i < 5; i++)
+            {
+                WebsitesWithURL.GetControlFromPosition(2,i).Click+= CommonBtn_Click;
+            }
             using (StreamReader file = File.OpenText(@"..\..\..\jsons\course.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
@@ -42,6 +47,14 @@ namespace UTM_marker
            
         }
 
+        private void CommonBtn_Click(object sender, EventArgs e)
+        {
+            var msg = (Button)sender;
+            var str = int.Parse(msg.Name[msg.Name.Length - 1].ToString());
+            var url=WebsitesWithURL.GetControlFromPosition(1,str).Text;
+            Clipboard.SetText($"{url}");
+
+        }
         private void CoursesList_SelectedIndexChanged(object sender, EventArgs e)
         {
             var courseName = CoursesList.SelectedItem;

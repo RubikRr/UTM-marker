@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Courses));
             this.CreateCourse = new System.Windows.Forms.Button();
             this.CoursesList = new System.Windows.Forms.ListBox();
             this.VkUrl = new System.Windows.Forms.TextBox();
             this.VkLabel = new System.Windows.Forms.Label();
             this.WebsitesWithURL = new System.Windows.Forms.TableLayoutPanel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button0 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.TgLabel = new System.Windows.Forms.Label();
             this.TgUrl = new System.Windows.Forms.TextBox();
             this.EmailLabel = new System.Windows.Forms.Label();
@@ -47,7 +53,7 @@
             // CreateCourse
             // 
             this.CreateCourse.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.CreateCourse.Location = new System.Drawing.Point(304, 362);
+            this.CreateCourse.Location = new System.Drawing.Point(303, 353);
             this.CreateCourse.Name = "CreateCourse";
             this.CreateCourse.Size = new System.Drawing.Size(151, 44);
             this.CreateCourse.TabIndex = 0;
@@ -62,10 +68,11 @@
             this.CoursesList.BackColor = System.Drawing.SystemColors.Control;
             this.CoursesList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CoursesList.FormattingEnabled = true;
+            this.CoursesList.HorizontalScrollbar = true;
             this.CoursesList.ItemHeight = 21;
             this.CoursesList.Location = new System.Drawing.Point(12, 30);
             this.CoursesList.Name = "CoursesList";
-            this.CoursesList.Size = new System.Drawing.Size(154, 403);
+            this.CoursesList.Size = new System.Drawing.Size(154, 382);
             this.CoursesList.TabIndex = 1;
             this.CoursesList.SelectedIndexChanged += new System.EventHandler(this.CoursesList_SelectedIndexChanged);
             // 
@@ -75,7 +82,7 @@
             this.VkUrl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.VkUrl.Location = new System.Drawing.Point(103, 3);
             this.VkUrl.Name = "VkUrl";
-            this.VkUrl.Size = new System.Drawing.Size(441, 29);
+            this.VkUrl.Size = new System.Drawing.Size(440, 29);
             this.VkUrl.TabIndex = 1;
             // 
             // VkLabel
@@ -84,7 +91,7 @@
             this.VkLabel.AutoSize = true;
             this.VkLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.VkLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.VkLabel.Location = new System.Drawing.Point(3, 3);
+            this.VkLabel.Location = new System.Drawing.Point(3, 2);
             this.VkLabel.Name = "VkLabel";
             this.VkLabel.Size = new System.Drawing.Size(94, 30);
             this.VkLabel.TabIndex = 0;
@@ -99,6 +106,11 @@
             this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.WebsitesWithURL.Controls.Add(this.button4, 2, 4);
+            this.WebsitesWithURL.Controls.Add(this.button3, 2, 3);
+            this.WebsitesWithURL.Controls.Add(this.button2, 2, 2);
+            this.WebsitesWithURL.Controls.Add(this.button0, 2, 0);
+            this.WebsitesWithURL.Controls.Add(this.button1, 2, 1);
             this.WebsitesWithURL.Controls.Add(this.VkLabel, 0, 0);
             this.WebsitesWithURL.Controls.Add(this.VkUrl, 1, 0);
             this.WebsitesWithURL.Controls.Add(this.TgLabel, 0, 1);
@@ -117,15 +129,65 @@
             this.WebsitesWithURL.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.WebsitesWithURL.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.WebsitesWithURL.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.WebsitesWithURL.Size = new System.Drawing.Size(587, 180);
+            this.WebsitesWithURL.Size = new System.Drawing.Size(586, 171);
             this.WebsitesWithURL.TabIndex = 2;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(549, 139);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(34, 29);
+            this.button4.TabIndex = 14;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(549, 105);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 28);
+            this.button3.TabIndex = 13;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(549, 71);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 28);
+            this.button2.TabIndex = 12;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button0
+            // 
+            this.button0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button0.Image = ((System.Drawing.Image)(resources.GetObject("button0.Image")));
+            this.button0.Location = new System.Drawing.Point(549, 3);
+            this.button0.Name = "button0";
+            this.button0.Size = new System.Drawing.Size(34, 28);
+            this.button0.TabIndex = 10;
+            this.button0.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(549, 37);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 28);
+            this.button1.TabIndex = 11;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // TgLabel
             // 
             this.TgLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TgLabel.AutoSize = true;
             this.TgLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TgLabel.Location = new System.Drawing.Point(3, 39);
+            this.TgLabel.Location = new System.Drawing.Point(3, 36);
             this.TgLabel.Name = "TgLabel";
             this.TgLabel.Size = new System.Drawing.Size(94, 30);
             this.TgLabel.TabIndex = 2;
@@ -135,9 +197,9 @@
             // 
             this.TgUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TgUrl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TgUrl.Location = new System.Drawing.Point(103, 39);
+            this.TgUrl.Location = new System.Drawing.Point(103, 37);
             this.TgUrl.Name = "TgUrl";
-            this.TgUrl.Size = new System.Drawing.Size(441, 29);
+            this.TgUrl.Size = new System.Drawing.Size(440, 29);
             this.TgUrl.TabIndex = 3;
             // 
             // EmailLabel
@@ -145,7 +207,7 @@
             this.EmailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmailLabel.Location = new System.Drawing.Point(3, 147);
+            this.EmailLabel.Location = new System.Drawing.Point(3, 138);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(94, 30);
             this.EmailLabel.TabIndex = 6;
@@ -156,7 +218,7 @@
             this.TaplinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TaplinkLabel.AutoSize = true;
             this.TaplinkLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TaplinkLabel.Location = new System.Drawing.Point(3, 111);
+            this.TaplinkLabel.Location = new System.Drawing.Point(3, 104);
             this.TaplinkLabel.Name = "TaplinkLabel";
             this.TaplinkLabel.Size = new System.Drawing.Size(94, 30);
             this.TaplinkLabel.TabIndex = 5;
@@ -166,27 +228,27 @@
             // 
             this.InstUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.InstUrl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InstUrl.Location = new System.Drawing.Point(103, 75);
+            this.InstUrl.Location = new System.Drawing.Point(103, 71);
             this.InstUrl.Name = "InstUrl";
-            this.InstUrl.Size = new System.Drawing.Size(441, 29);
+            this.InstUrl.Size = new System.Drawing.Size(440, 29);
             this.InstUrl.TabIndex = 7;
             // 
             // TaplinkUrl
             // 
             this.TaplinkUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TaplinkUrl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TaplinkUrl.Location = new System.Drawing.Point(103, 111);
+            this.TaplinkUrl.Location = new System.Drawing.Point(103, 105);
             this.TaplinkUrl.Name = "TaplinkUrl";
-            this.TaplinkUrl.Size = new System.Drawing.Size(441, 29);
+            this.TaplinkUrl.Size = new System.Drawing.Size(440, 29);
             this.TaplinkUrl.TabIndex = 8;
             // 
             // EmailUrl
             // 
             this.EmailUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailUrl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmailUrl.Location = new System.Drawing.Point(103, 147);
+            this.EmailUrl.Location = new System.Drawing.Point(103, 139);
             this.EmailUrl.Name = "EmailUrl";
-            this.EmailUrl.Size = new System.Drawing.Size(441, 29);
+            this.EmailUrl.Size = new System.Drawing.Size(440, 29);
             this.EmailUrl.TabIndex = 9;
             // 
             // InstLabel
@@ -194,7 +256,7 @@
             this.InstLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.InstLabel.AutoSize = true;
             this.InstLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.InstLabel.Location = new System.Drawing.Point(3, 75);
+            this.InstLabel.Location = new System.Drawing.Point(3, 70);
             this.InstLabel.Name = "InstLabel";
             this.InstLabel.Size = new System.Drawing.Size(94, 30);
             this.InstLabel.TabIndex = 4;
@@ -204,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(799, 441);
             this.Controls.Add(this.WebsitesWithURL);
             this.Controls.Add(this.CoursesList);
             this.Controls.Add(this.CreateCourse);
@@ -233,5 +295,10 @@
         private System.Windows.Forms.TextBox InstUrl;
         private System.Windows.Forms.TextBox TaplinkUrl;
         private System.Windows.Forms.TextBox EmailUrl;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button0;
+        private System.Windows.Forms.Button button1;
     }
 }

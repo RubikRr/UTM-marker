@@ -41,7 +41,7 @@
             // 
             this.LinkLabel.AutoSize = true;
             this.LinkLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LinkLabel.Location = new System.Drawing.Point(3, 193);
+            this.LinkLabel.Location = new System.Drawing.Point(3, 191);
             this.LinkLabel.Name = "LinkLabel";
             this.LinkLabel.Size = new System.Drawing.Size(239, 30);
             this.LinkLabel.TabIndex = 3;
@@ -68,6 +68,7 @@
             this.Course.Name = "Course";
             this.Course.Size = new System.Drawing.Size(672, 35);
             this.Course.TabIndex = 0;
+            this.Course.TextChanged += new System.EventHandler(this.Course_TextChanged);
             // 
             // CreateUtmLinks
             // 

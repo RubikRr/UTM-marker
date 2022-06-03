@@ -25,13 +25,6 @@ namespace UTM_marker
            CoursesList = coursesList;
         }
        
-
-       
-
-        
-
-       
-
         private void CreateUtmLinks_Click(object sender, EventArgs e)
         {
             string courseName = Course.Text;
@@ -43,13 +36,15 @@ namespace UTM_marker
             }
             var course = new Course(courseName, url, websites);
             CoursesWithUrls.Add(course);
-            File.WriteAllText(@"..\..\..\jsons\course.json", JsonConvert.SerializeObject(CoursesWithUrls));
+
             using (StreamWriter file = File.CreateText(@"..\..\..\jsons\course.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, CoursesWithUrls);
             }
 
+            MessageBox.Show("Курс создан");
+            Refresh();
            
         }
 
@@ -61,6 +56,18 @@ namespace UTM_marker
             var TaplinkSite = new Website("Taplink", new UtmLink("myAnalytics", "organic", "taplink"));
             var EmailSite = new Website("Email", new UtmLink("myAnalytics", "email", "stepik"));
             websites.AddRange(new Website[] { VkSite, TgSite, InstSite, TaplinkSite, EmailSite });
+        }
+
+        public void Refresh()
+        {
+            Course.Text = "";
+            Link.Text = "";
+            //Link.Enabled = false;
+        }
+
+        private void Course_TextChanged(object sender, EventArgs e)
+        {
+           // Link.Enabled = true;
         }
     }
 }
