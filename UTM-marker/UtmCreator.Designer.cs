@@ -68,7 +68,6 @@
             this.Course.Name = "Course";
             this.Course.Size = new System.Drawing.Size(672, 35);
             this.Course.TabIndex = 0;
-            this.Course.TextChanged += new System.EventHandler(this.Course_TextChanged);
             // 
             // CreateUtmLinks
             // 

@@ -6,7 +6,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,14 +19,14 @@ namespace UTM_marker
         public List<Course> CoursesWithUrls { get; set; }
         List<Website> websites = new List<Website>();
         ListBox CoursesList = new ListBox();
-        public UtmCreator(List<Course> coursesWithUrls,ListBox coursesList)
+        public UtmCreator(List<Course> coursesWithUrls, ListBox coursesList)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-           CoursesWithUrls = coursesWithUrls;
-           CoursesList = coursesList;
+            CoursesWithUrls = coursesWithUrls;
+            CoursesList = coursesList;
         }
-       
+
         private void CreateUtmLinks_Click(object sender, EventArgs e)
         {
             string courseName = Course.Text;
@@ -33,6 +35,8 @@ namespace UTM_marker
             foreach (var site in websites)
             {
                 site.UTMparam.AddUTMmark(url);
+               // Thread.Sleep(500);
+                site.UTMparam.CreateShortLink(site.UTMparam.LinkForApi);
             }
             var course = new Course(courseName, url, websites);
             CoursesWithUrls.Add(course);
@@ -42,12 +46,12 @@ namespace UTM_marker
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, CoursesWithUrls);
             }
-
+        
             MessageBox.Show("Курс создан");
-            Refresh();
-           
-        }
+            this.Close();
 
+        }
+       
         private void UtmCreator_Load(object sender, EventArgs e)
         {
             var VkSite = new Website("Vk", new UtmLink("myAnalytics", "social", "vk"));
@@ -63,11 +67,6 @@ namespace UTM_marker
             Course.Text = "";
             Link.Text = "";
             //Link.Enabled = false;
-        }
-
-        private void Course_TextChanged(object sender, EventArgs e)
-        {
-           // Link.Enabled = true;
         }
     }
 }
