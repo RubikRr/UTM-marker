@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_749D57C9E59845658C29344572D4DE2D"
+        "MsmKey" = "8:_6916265FB8904D4EBB2B961E162495A4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -76,13 +92,23 @@
         {
             "LaunchCondition"
             {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_E8223C3C0C9A4849BFBDA20F550E9EDE"
+                {
+                "Name" = "8:.NET Core"
+                "Message" = "8:[VSDNETCOREMSG]"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
+                "IsNETCore" = "11:TRUE"
+                "Architecture" = "2:0"
+                "Runtime" = "2:0"
+                }
             }
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_749D57C9E59845658C29344572D4DE2D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6916265FB8904D4EBB2B961E162495A4"
             {
-            "SourcePath" = "8:..\\UTM-marker\\icons\\link.ico"
+            "SourcePath" = "8:..\\UTM-marker\\bin\\Debug\\net5.0-windows\\icons\\link.ico"
             "TargetName" = "8:link.ico"
             "Tag" = "8:"
             "Folder" = "8:_67814B81987C4C9E935929D3609AA393"
@@ -168,7 +194,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{C71EF102-DAC3-4D29-A7C8-B2503A8FE37B}"
-        "PackageCode" = "8:{863AE6EE-8769-43E9-A90F-4E0A55B25C16}"
+        "PackageCode" = "8:{9A4C9DCC-EA74-49D4-B21F-493EB463725F}"
         "UpgradeCode" = "8:{1A6620D5-F4D8-432E-9F9D-D61A02D3FDD1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -299,7 +325,7 @@
             "Target" = "8:_7DD46E3D9D614E1BA90C367428AE5C18"
             "Folder" = "8:_2BDE8159F48746CF8EF19524B8D50AF2"
             "WorkingFolder" = "8:_67814B81987C4C9E935929D3609AA393"
-            "Icon" = "8:_749D57C9E59845658C29344572D4DE2D"
+            "Icon" = "8:_6916265FB8904D4EBB2B961E162495A4"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_94C3E491780B49FC9A87C702834C9CBA"
@@ -313,7 +339,7 @@
             "Target" = "8:_7DD46E3D9D614E1BA90C367428AE5C18"
             "Folder" = "8:_8BECFE9603DB4E28B220C43192316B02"
             "WorkingFolder" = "8:_67814B81987C4C9E935929D3609AA393"
-            "Icon" = "8:_749D57C9E59845658C29344572D4DE2D"
+            "Icon" = "8:_6916265FB8904D4EBB2B961E162495A4"
             "Feature" = "8:"
             }
         }

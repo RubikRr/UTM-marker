@@ -37,7 +37,7 @@ namespace UTM_marker
                 WebsitesWithURL.GetControlFromPosition(2, i).Click += CommonBtn_Click;
             }
 
-            using (StreamReader file = File.OpenText(@"..\..\..\jsons\course.json"))
+            using (StreamReader file = File.OpenText(@"jsons\course.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 CoursesWithLinks = (List<Course>)serializer.Deserialize(file, typeof(List<Course>));
