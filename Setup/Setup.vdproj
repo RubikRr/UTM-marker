@@ -25,6 +25,12 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_896D087491ED401A9E8A1F42B69328E8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -50,6 +56,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -126,6 +140,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_896D087491ED401A9E8A1F42B69328E8"
+            {
+            "SourcePath" = "8:..\\UTM-marker\\bin\\Debug\\net5.0-windows\\jsons\\course.json"
+            "TargetName" = "8:course.json"
+            "Tag" = "8:"
+            "Folder" = "8:_CEDFD04007BC472AAC102F92111C5326"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -156,7 +190,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_67814B81987C4C9E935929D3609AA393"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -164,6 +198,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_CEDFD04007BC472AAC102F92111C5326"
+                    {
+                    "Name" = "8:jsons"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_FE6AA522199F40509472CF4D80A6DF3D"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_8BECFE9603DB4E28B220C43192316B02"
@@ -192,9 +237,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup"
+        "ProductName" = "8:Utm-marker"
         "ProductCode" = "8:{C71EF102-DAC3-4D29-A7C8-B2503A8FE37B}"
-        "PackageCode" = "8:{9A4C9DCC-EA74-49D4-B21F-493EB463725F}"
+        "PackageCode" = "8:{C3A7C6AD-E16F-45E2-863C-374701F859B0}"
         "UpgradeCode" = "8:{1A6620D5-F4D8-432E-9F9D-D61A02D3FDD1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -215,7 +260,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -316,7 +361,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_292A05C266824BBB87BCFE87B599434A"
             {
-            "Name" = "8:UTM-marker Installer"
+            "Name" = "8:UTM-marker"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -330,7 +375,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_94C3E491780B49FC9A87C702834C9CBA"
             {
-            "Name" = "8:UTM-marker Installer"
+            "Name" = "8:UTM-marker"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
