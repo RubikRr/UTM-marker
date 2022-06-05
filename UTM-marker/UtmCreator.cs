@@ -35,7 +35,6 @@ namespace UTM_marker
             foreach (var site in websites)
             {
                 site.UTMparam.AddUTMmark(url);
-               // Thread.Sleep(500);
                 site.UTMparam.CreateShortLink(site.UTMparam.LinkForApi);
             }
             var course = new Course(courseName, url, websites);
@@ -60,13 +59,6 @@ namespace UTM_marker
             var TaplinkSite = new Website("Taplink", new UtmLink("myAnalytics", "organic", "taplink"));
             var EmailSite = new Website("Email", new UtmLink("myAnalytics", "email", "stepik"));
             websites.AddRange(new Website[] { VkSite, TgSite, InstSite, TaplinkSite, EmailSite });
-        }
-
-        public void Refresh()
-        {
-            Course.Text = "";
-            Link.Text = "";
-            //Link.Enabled = false;
         }
     }
 }
