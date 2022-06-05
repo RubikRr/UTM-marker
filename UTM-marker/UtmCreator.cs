@@ -41,7 +41,7 @@ namespace UTM_marker
             var course = new Course(courseName, url, websites);
             CoursesWithUrls.Add(course);
 
-            using (StreamWriter file = File.CreateText(@"jsons\course.json"))
+            using (StreamWriter file = File.CreateText(@"..\..\..\jsons\course.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, CoursesWithUrls);
