@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_1FDC823B9D7E4D7EA3E694E3C20A2BAB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6916265FB8904D4EBB2B961E162495A4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -22,12 +28,6 @@
         "Entry"
         {
         "MsmKey" = "8:_7DD46E3D9D614E1BA90C367428AE5C18"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_896D087491ED401A9E8A1F42B69328E8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -120,12 +120,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6916265FB8904D4EBB2B961E162495A4"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1FDC823B9D7E4D7EA3E694E3C20A2BAB"
             {
-            "SourcePath" = "8:..\\UTM-marker\\bin\\Debug\\net5.0-windows\\icons\\link.ico"
-            "TargetName" = "8:link.ico"
+            "SourcePath" = "8:..\\UTM-marker\\bin\\Debug\\net5.0-windows\\jsons\\course.json"
+            "TargetName" = "8:course.json"
             "Tag" = "8:"
-            "Folder" = "8:_67814B81987C4C9E935929D3609AA393"
+            "Folder" = "8:_CEDFD04007BC472AAC102F92111C5326"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -140,12 +140,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_896D087491ED401A9E8A1F42B69328E8"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6916265FB8904D4EBB2B961E162495A4"
             {
-            "SourcePath" = "8:..\\UTM-marker\\bin\\Debug\\net5.0-windows\\jsons\\course.json"
-            "TargetName" = "8:course.json"
+            "SourcePath" = "8:..\\UTM-marker\\bin\\Debug\\net5.0-windows\\icons\\link.ico"
+            "TargetName" = "8:link.ico"
             "Tag" = "8:"
-            "Folder" = "8:_CEDFD04007BC472AAC102F92111C5326"
+            "Folder" = "8:_67814B81987C4C9E935929D3609AA393"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -239,7 +239,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Utm-marker"
         "ProductCode" = "8:{C71EF102-DAC3-4D29-A7C8-B2503A8FE37B}"
-        "PackageCode" = "8:{C3A7C6AD-E16F-45E2-863C-374701F859B0}"
+        "PackageCode" = "8:{B7396C07-4339-46CB-B980-7CA7F4CFEFD3}"
         "UpgradeCode" = "8:{1A6620D5-F4D8-432E-9F9D-D61A02D3FDD1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
