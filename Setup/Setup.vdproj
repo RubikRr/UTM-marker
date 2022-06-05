@@ -88,6 +88,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -145,7 +153,7 @@
             "SourcePath" = "8:..\\UTM-marker\\bin\\Debug\\net5.0-windows\\icons\\link.ico"
             "TargetName" = "8:link.ico"
             "Tag" = "8:"
-            "Folder" = "8:_67814B81987C4C9E935929D3609AA393"
+            "Folder" = "8:_B541ED5CBB34487DA7269EC84992D776"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -198,6 +206,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B541ED5CBB34487DA7269EC84992D776"
+                    {
+                    "Name" = "8:icons"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_C7449E24F60147D5B8D0DE70DB71DBE3"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_CEDFD04007BC472AAC102F92111C5326"
                     {
                     "Name" = "8:jsons"
@@ -239,7 +258,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Utm-marker"
         "ProductCode" = "8:{C71EF102-DAC3-4D29-A7C8-B2503A8FE37B}"
-        "PackageCode" = "8:{B7396C07-4339-46CB-B980-7CA7F4CFEFD3}"
+        "PackageCode" = "8:{A27B8182-4D2A-42B1-A861-180324A05900}"
         "UpgradeCode" = "8:{1A6620D5-F4D8-432E-9F9D-D61A02D3FDD1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
