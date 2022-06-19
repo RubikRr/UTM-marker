@@ -24,8 +24,8 @@ namespace UTM_marker
         }
         private void CreateCourse_Click(object sender, EventArgs e)
         {
-            var utmForm = new Utm(SitesWithLinks, SitesList);
-            utmForm.Show();
+            var utmCreateForm = new UtmCreator(SitesWithLinks, SitesList);
+            utmCreateForm.Show();
         }
 
 
@@ -52,9 +52,10 @@ namespace UTM_marker
             }
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void toolStripEdit_Click(object sender, EventArgs e)
         {
-
+            var utmChangeForm = new UtmEditor(SitesWithLinks, SitesList, selectedItemIndex);
+            utmChangeForm.Show();
         }
 
         private void myListBox_MouseUp(object sender, MouseEventArgs e)
@@ -78,7 +79,7 @@ namespace UTM_marker
         private void ContextMenySettings()
         {
             var toolStripMenuItem1 = new ToolStripMenuItem { Text = "Edit" };
-            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            toolStripMenuItem1.Click += toolStripEdit_Click;
 
             var toolStripDeleat = new ToolStripMenuItem { Text = "Deleat" };
             toolStripDeleat.Click += toolStripDeleat_Click;

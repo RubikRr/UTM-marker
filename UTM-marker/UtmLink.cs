@@ -55,11 +55,11 @@ namespace UTM_marker
                 }
 
             }
-            catch
+            catch (WebException ex)
             {
-                MessageBox.Show("Error");
+                if (ex.Response == null) throw; 
+                    return null;
             }
-            return null;
         }
     }
 }

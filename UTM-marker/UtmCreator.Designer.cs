@@ -1,6 +1,6 @@
 ﻿namespace UTM_marker
 {
-    partial class Utm
+    partial class UtmCreator
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@
             this.Link.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Link.Location = new System.Drawing.Point(3, 249);
             this.Link.Name = "Link";
-            this.Link.Size = new System.Drawing.Size(672, 35);
+            this.Link.Size = new System.Drawing.Size(670, 35);
             this.Link.TabIndex = 1;
             // 
             // Course
@@ -66,13 +66,13 @@
             this.Course.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Course.Location = new System.Drawing.Point(3, 127);
             this.Course.Name = "Course";
-            this.Course.Size = new System.Drawing.Size(672, 35);
+            this.Course.Size = new System.Drawing.Size(670, 35);
             this.Course.TabIndex = 0;
             // 
             // CreateUtmLinks
             // 
             this.CreateUtmLinks.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.CreateUtmLinks.Location = new System.Drawing.Point(258, 331);
+            this.CreateUtmLinks.Location = new System.Drawing.Point(257, 329);
             this.CreateUtmLinks.MaximumSize = new System.Drawing.Size(150, 40);
             this.CreateUtmLinks.Name = "CreateUtmLinks";
             this.CreateUtmLinks.Size = new System.Drawing.Size(150, 40);
@@ -103,17 +103,17 @@
             this.panel1.Controls.Add(this.Link);
             this.panel1.Location = new System.Drawing.Point(12, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(692, 422);
+            this.panel1.Size = new System.Drawing.Size(690, 420);
             this.panel1.TabIndex = 5;
             // 
-            // Utm
+            // UtmCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 438);
+            this.ClientSize = new System.Drawing.Size(714, 436);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(730, 475);
-            this.Name = "Utm";
+            this.Name = "UtmCreator";
             this.Text = "Utm";
             this.Load += new System.EventHandler(this.UtmCreator_Load);
             this.panel1.ResumeLayout(false);
