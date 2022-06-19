@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_1FDC823B9D7E4D7EA3E694E3C20A2BAB"
+        "MsmKey" = "8:_1FEAD56A3D504803BCCC73496D228438"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -143,9 +143,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1FDC823B9D7E4D7EA3E694E3C20A2BAB"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1FEAD56A3D504803BCCC73496D228438"
             {
-            "SourcePath" = "8:..\\UTM-marker\\bin\\Debug\\net5.0-windows\\jsons\\course.json"
+            "SourcePath" = "8:..\\UTM-marker\\bin\\Release\\net5.0-windows\\jsons\\course.json"
             "TargetName" = "8:course.json"
             "Tag" = "8:"
             "Folder" = "8:_CEDFD04007BC472AAC102F92111C5326"
@@ -273,7 +273,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Utm-marker"
         "ProductCode" = "8:{C71EF102-DAC3-4D29-A7C8-B2503A8FE37B}"
-        "PackageCode" = "8:{B44ED6E4-749D-4F7A-943F-89A4DE3A405A}"
+        "PackageCode" = "8:{87A57B13-7ECC-44EB-8D4D-7C964FA7DD4B}"
         "UpgradeCode" = "8:{1A6620D5-F4D8-432E-9F9D-D61A02D3FDD1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
