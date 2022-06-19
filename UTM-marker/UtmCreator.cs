@@ -14,23 +14,30 @@ using System.Windows.Forms;
 
 namespace UTM_marker
 {
-    public partial class UtmCreator : Form
+    public partial class Utm : Form
     {
-        public List<Course> CoursesWithUrls { get; set; }
+        public List<Course> SitesWithLinks { get; set; }
         List<Website> websites = new List<Website>();
         ListBox CoursesList = new ListBox();
-        public UtmCreator(List<Course> coursesWithUrls, ListBox coursesList)
+        public Utm(List<Course> coursesWithLinks, ListBox coursesList)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            CoursesWithUrls = coursesWithUrls;
+            SitesWithLinks = coursesWithLinks;
             CoursesList = coursesList;
         }
+
+        private bool SiteExistenceCheck(string siteName)=> CoursesList.Items.Contains(siteName);
 
         private void CreateUtmLinks_Click(object sender, EventArgs e)
         {
             string courseName = Course.Text;
             string url = Link.Text;
+            if (SiteExistenceCheck(courseName))
+            {
+                MessageBox.Show("NEEEEETUSHKI");
+                return;
+            }
             CoursesList.Items.Add(courseName);
             foreach (var site in websites)
             {
@@ -38,14 +45,10 @@ namespace UTM_marker
                 site.UTMparam.CreateShortLink(site.UTMparam.LinkForApi);
             }
             var course = new Course(courseName, url, websites);
-            CoursesWithUrls.Add(course);
+            SitesWithLinks.Add(course);
 
-            using (StreamWriter file = File.CreateText(@"jsons\course.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, CoursesWithUrls);
-            }
-        
+            JsonWorker.SerializeJson(SitesWithLinks);
+
             MessageBox.Show("Курс создан");
             this.Close();
 

@@ -273,7 +273,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Utm-marker"
         "ProductCode" = "8:{C71EF102-DAC3-4D29-A7C8-B2503A8FE37B}"
-        "PackageCode" = "8:{979DD9ED-C846-483B-9994-FECB456BFFA7}"
+        "PackageCode" = "8:{B44ED6E4-749D-4F7A-943F-89A4DE3A405A}"
         "UpgradeCode" = "8:{1A6620D5-F4D8-432E-9F9D-D61A02D3FDD1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

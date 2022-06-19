@@ -1,6 +1,6 @@
 ﻿namespace UTM_marker
 {
-    partial class Courses
+    partial class Links
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Courses));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Links));
             this.CreateCourse = new System.Windows.Forms.Button();
-            this.CoursesList = new System.Windows.Forms.ListBox();
+            this.SitesList = new System.Windows.Forms.ListBox();
             this.VkUrl = new System.Windows.Forms.TextBox();
             this.VkLabel = new System.Windows.Forms.Label();
             this.WebsitesWithURL = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button0 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CopyButton4 = new System.Windows.Forms.Button();
+            this.CopyButton3 = new System.Windows.Forms.Button();
+            this.CopyButton2 = new System.Windows.Forms.Button();
+            this.CopyButton0 = new System.Windows.Forms.Button();
+            this.CopyButton1 = new System.Windows.Forms.Button();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.EmailUrl = new System.Windows.Forms.TextBox();
             this.TaplinkLabel = new System.Windows.Forms.Label();
@@ -52,16 +53,17 @@
             this.InstShortLabel = new System.Windows.Forms.Label();
             this.TaplinkShortLabel = new System.Windows.Forms.Label();
             this.EmailShortLabel = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.CopyButton9 = new System.Windows.Forms.Button();
+            this.CopyButton8 = new System.Windows.Forms.Button();
+            this.CopyButton7 = new System.Windows.Forms.Button();
+            this.CopyButton6 = new System.Windows.Forms.Button();
+            this.CopyButton5 = new System.Windows.Forms.Button();
             this.VkShortUrl = new System.Windows.Forms.TextBox();
             this.TgShortUrl = new System.Windows.Forms.TextBox();
             this.InstShortUrl = new System.Windows.Forms.TextBox();
             this.TaplinkShortUrl = new System.Windows.Forms.TextBox();
             this.EmailShortUrl = new System.Windows.Forms.TextBox();
+            this.listboxContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.WebsitesWithURL.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,20 +78,20 @@
             this.CreateCourse.UseVisualStyleBackColor = true;
             this.CreateCourse.Click += new System.EventHandler(this.CreateCourse_Click);
             // 
-            // CoursesList
+            // SitesList
             // 
-            this.CoursesList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SitesList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.CoursesList.BackColor = System.Drawing.SystemColors.Control;
-            this.CoursesList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CoursesList.FormattingEnabled = true;
-            this.CoursesList.HorizontalScrollbar = true;
-            this.CoursesList.ItemHeight = 21;
-            this.CoursesList.Location = new System.Drawing.Point(12, 30);
-            this.CoursesList.Name = "CoursesList";
-            this.CoursesList.Size = new System.Drawing.Size(260, 424);
-            this.CoursesList.TabIndex = 1;
-            this.CoursesList.SelectedIndexChanged += new System.EventHandler(this.CoursesList_SelectedIndexChanged);
+            this.SitesList.BackColor = System.Drawing.SystemColors.Control;
+            this.SitesList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SitesList.FormattingEnabled = true;
+            this.SitesList.HorizontalScrollbar = true;
+            this.SitesList.ItemHeight = 21;
+            this.SitesList.Location = new System.Drawing.Point(12, 30);
+            this.SitesList.Name = "SitesList";
+            this.SitesList.Size = new System.Drawing.Size(260, 424);
+            this.SitesList.TabIndex = 1;
+            this.SitesList.SelectedIndexChanged += new System.EventHandler(this.SitesList_SelectedIndexChanged);
             // 
             // VkUrl
             // 
@@ -121,11 +123,11 @@
             this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.WebsitesWithURL.Controls.Add(this.button4, 2, 4);
-            this.WebsitesWithURL.Controls.Add(this.button3, 2, 3);
-            this.WebsitesWithURL.Controls.Add(this.button2, 2, 2);
-            this.WebsitesWithURL.Controls.Add(this.button0, 2, 0);
-            this.WebsitesWithURL.Controls.Add(this.button1, 2, 1);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton4, 2, 4);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton3, 2, 3);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton2, 2, 2);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton0, 2, 0);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton1, 2, 1);
             this.WebsitesWithURL.Controls.Add(this.VkLabel, 0, 0);
             this.WebsitesWithURL.Controls.Add(this.VkUrl, 1, 0);
             this.WebsitesWithURL.Controls.Add(this.EmailLabel, 0, 8);
@@ -141,11 +143,11 @@
             this.WebsitesWithURL.Controls.Add(this.InstShortLabel, 0, 5);
             this.WebsitesWithURL.Controls.Add(this.TaplinkShortLabel, 0, 7);
             this.WebsitesWithURL.Controls.Add(this.EmailShortLabel, 0, 9);
-            this.WebsitesWithURL.Controls.Add(this.button9, 2, 9);
-            this.WebsitesWithURL.Controls.Add(this.button8, 2, 8);
-            this.WebsitesWithURL.Controls.Add(this.button7, 2, 7);
-            this.WebsitesWithURL.Controls.Add(this.button6, 2, 6);
-            this.WebsitesWithURL.Controls.Add(this.button5, 2, 5);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton9, 2, 9);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton8, 2, 8);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton7, 2, 7);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton6, 2, 6);
+            this.WebsitesWithURL.Controls.Add(this.CopyButton5, 2, 5);
             this.WebsitesWithURL.Controls.Add(this.VkShortUrl, 1, 1);
             this.WebsitesWithURL.Controls.Add(this.TgShortUrl, 1, 3);
             this.WebsitesWithURL.Controls.Add(this.InstShortUrl, 1, 5);
@@ -167,55 +169,55 @@
             this.WebsitesWithURL.Size = new System.Drawing.Size(694, 399);
             this.WebsitesWithURL.TabIndex = 2;
             // 
-            // button4
+            // CopyButton4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(657, 161);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(34, 28);
-            this.button4.TabIndex = 14;
-            this.button4.UseVisualStyleBackColor = true;
+            this.CopyButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton4.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton4.Image")));
+            this.CopyButton4.Location = new System.Drawing.Point(657, 161);
+            this.CopyButton4.Name = "CopyButton4";
+            this.CopyButton4.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton4.TabIndex = 14;
+            this.CopyButton4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // CopyButton3
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(657, 122);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(34, 28);
-            this.button3.TabIndex = 13;
-            this.button3.UseVisualStyleBackColor = true;
+            this.CopyButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton3.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton3.Image")));
+            this.CopyButton3.Location = new System.Drawing.Point(657, 122);
+            this.CopyButton3.Name = "CopyButton3";
+            this.CopyButton3.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton3.TabIndex = 13;
+            this.CopyButton3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // CopyButton2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(657, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(34, 28);
-            this.button2.TabIndex = 12;
-            this.button2.UseVisualStyleBackColor = true;
+            this.CopyButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton2.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton2.Image")));
+            this.CopyButton2.Location = new System.Drawing.Point(657, 83);
+            this.CopyButton2.Name = "CopyButton2";
+            this.CopyButton2.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton2.TabIndex = 12;
+            this.CopyButton2.UseVisualStyleBackColor = true;
             // 
-            // button0
+            // CopyButton0
             // 
-            this.button0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button0.Image = ((System.Drawing.Image)(resources.GetObject("button0.Image")));
-            this.button0.Location = new System.Drawing.Point(657, 5);
-            this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(34, 28);
-            this.button0.TabIndex = 10;
-            this.button0.UseVisualStyleBackColor = true;
+            this.CopyButton0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton0.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton0.Image")));
+            this.CopyButton0.Location = new System.Drawing.Point(657, 5);
+            this.CopyButton0.Name = "CopyButton0";
+            this.CopyButton0.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton0.TabIndex = 10;
+            this.CopyButton0.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // CopyButton1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(657, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 28);
-            this.button1.TabIndex = 11;
-            this.button1.UseVisualStyleBackColor = true;
+            this.CopyButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton1.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton1.Image")));
+            this.CopyButton1.Location = new System.Drawing.Point(657, 44);
+            this.CopyButton1.Name = "CopyButton1";
+            this.CopyButton1.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton1.TabIndex = 11;
+            this.CopyButton1.UseVisualStyleBackColor = true;
             // 
             // EmailLabel
             // 
@@ -352,55 +354,55 @@
             this.EmailShortLabel.TabIndex = 19;
             this.EmailShortLabel.Text = "EmailShort";
             // 
-            // button9
+            // CopyButton9
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(657, 361);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(34, 28);
-            this.button9.TabIndex = 24;
-            this.button9.UseVisualStyleBackColor = true;
+            this.CopyButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton9.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton9.Image")));
+            this.CopyButton9.Location = new System.Drawing.Point(657, 361);
+            this.CopyButton9.Name = "CopyButton9";
+            this.CopyButton9.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton9.TabIndex = 24;
+            this.CopyButton9.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // CopyButton8
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(657, 317);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(34, 28);
-            this.button8.TabIndex = 23;
-            this.button8.UseVisualStyleBackColor = true;
+            this.CopyButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton8.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton8.Image")));
+            this.CopyButton8.Location = new System.Drawing.Point(657, 317);
+            this.CopyButton8.Name = "CopyButton8";
+            this.CopyButton8.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton8.TabIndex = 23;
+            this.CopyButton8.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // CopyButton7
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(657, 278);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(34, 28);
-            this.button7.TabIndex = 22;
-            this.button7.UseVisualStyleBackColor = true;
+            this.CopyButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton7.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton7.Image")));
+            this.CopyButton7.Location = new System.Drawing.Point(657, 278);
+            this.CopyButton7.Name = "CopyButton7";
+            this.CopyButton7.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton7.TabIndex = 22;
+            this.CopyButton7.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // CopyButton6
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(657, 239);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(34, 28);
-            this.button6.TabIndex = 21;
-            this.button6.UseVisualStyleBackColor = true;
+            this.CopyButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton6.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton6.Image")));
+            this.CopyButton6.Location = new System.Drawing.Point(657, 239);
+            this.CopyButton6.Name = "CopyButton6";
+            this.CopyButton6.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton6.TabIndex = 21;
+            this.CopyButton6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // CopyButton5
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(657, 200);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(34, 28);
-            this.button5.TabIndex = 20;
-            this.button5.UseVisualStyleBackColor = true;
+            this.CopyButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CopyButton5.Image = ((System.Drawing.Image)(resources.GetObject("CopyButton5.Image")));
+            this.CopyButton5.Location = new System.Drawing.Point(657, 200);
+            this.CopyButton5.Name = "CopyButton5";
+            this.CopyButton5.Size = new System.Drawing.Size(34, 28);
+            this.CopyButton5.TabIndex = 20;
+            this.CopyButton5.UseVisualStyleBackColor = true;
             // 
             // VkShortUrl
             // 
@@ -447,17 +449,24 @@
             this.EmailShortUrl.Size = new System.Drawing.Size(477, 29);
             this.EmailShortUrl.TabIndex = 29;
             // 
-            // Courses
+            // listboxContextMenu
+            // 
+            this.listboxContextMenu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.listboxContextMenu.Name = "listboxContextMenu";
+            this.listboxContextMenu.Size = new System.Drawing.Size(61, 4);
+            this.listboxContextMenu.Text = "listboxContextMenu";
+            // 
+            // Links
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 491);
             this.Controls.Add(this.WebsitesWithURL);
-            this.Controls.Add(this.CoursesList);
+            this.Controls.Add(this.SitesList);
             this.Controls.Add(this.CreateCourse);
             this.MinimumSize = new System.Drawing.Size(1000, 530);
-            this.Name = "Courses";
-            this.Text = "Courses";
+            this.Name = "Links";
+            this.Text = "Links";
             this.Load += new System.EventHandler(this.Courses_Load);
             this.WebsitesWithURL.ResumeLayout(false);
             this.WebsitesWithURL.PerformLayout();
@@ -468,7 +477,7 @@
         #endregion
 
         private System.Windows.Forms.Button CreateCourse;
-        private System.Windows.Forms.ListBox CoursesList;
+        private System.Windows.Forms.ListBox SitesList;
         private System.Windows.Forms.Label VkLabel;
         private System.Windows.Forms.TextBox VkUrl;
         private System.Windows.Forms.TableLayoutPanel WebsitesWithURL;
@@ -480,25 +489,26 @@
         private System.Windows.Forms.TextBox InstUrl;
         private System.Windows.Forms.TextBox TaplinkUrl;
         private System.Windows.Forms.TextBox EmailUrl;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button0;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CopyButton4;
+        private System.Windows.Forms.Button CopyButton3;
+        private System.Windows.Forms.Button CopyButton2;
+        private System.Windows.Forms.Button CopyButton0;
+        private System.Windows.Forms.Button CopyButton1;
         private System.Windows.Forms.Label VkShortLabel;
         private System.Windows.Forms.Label TgShortLabel;
         private System.Windows.Forms.Label InstShortLabel;
         private System.Windows.Forms.Label TaplinkShortLabel;
         private System.Windows.Forms.Label EmailShortLabel;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button CopyButton9;
+        private System.Windows.Forms.Button CopyButton8;
+        private System.Windows.Forms.Button CopyButton7;
+        private System.Windows.Forms.Button CopyButton6;
+        private System.Windows.Forms.Button CopyButton5;
         private System.Windows.Forms.TextBox VkShortUrl;
         private System.Windows.Forms.TextBox TgShortUrl;
         private System.Windows.Forms.TextBox InstShortUrl;
         private System.Windows.Forms.TextBox TaplinkShortUrl;
         private System.Windows.Forms.TextBox EmailShortUrl;
+        private System.Windows.Forms.ContextMenuStrip listboxContextMenu;
     }
 }

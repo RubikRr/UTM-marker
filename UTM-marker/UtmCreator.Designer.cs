@@ -1,6 +1,6 @@
 ﻿namespace UTM_marker
 {
-    partial class UtmCreator
+    partial class Utm
     {
         /// <summary>
         /// Required designer variable.
@@ -106,15 +106,15 @@
             this.panel1.Size = new System.Drawing.Size(692, 422);
             this.panel1.TabIndex = 5;
             // 
-            // UtmCreator
+            // Utm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 438);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(730, 475);
-            this.Name = "UtmCreator";
-            this.Text = "UtmCreator";
+            this.Name = "Utm";
+            this.Text = "Utm";
             this.Load += new System.EventHandler(this.UtmCreator_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

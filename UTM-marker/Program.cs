@@ -17,7 +17,7 @@ namespace UTM_marker
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Courses());
+            Application.Run(new Links());
         }
     }
 }

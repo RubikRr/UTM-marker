@@ -13,42 +13,97 @@ using System.Linq;
 
 namespace UTM_marker
 {
-    public partial class Courses : Form
+    public partial class Links : Form
     {
-        List<Course> CoursesWithLinks = new List<Course>();
-        public Courses()
+        List<Course> SitesWithLinks = new List<Course>();
+        private int selectedItemIndex;
+        public Links()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
-
-
         private void CreateCourse_Click(object sender, EventArgs e)
         {
-            var utmForm = new UtmCreator(CoursesWithLinks, CoursesList);
+            var utmForm = new Utm(SitesWithLinks, SitesList);
             utmForm.Show();
+        }
+
+
+        private void toolStripDeleat_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to deleat site", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SitesWithLinks.RemoveAt(selectedItemIndex);
+                SitesList.Items.Clear();
+                JsonWorker.SerializeJson(SitesWithLinks);
+                SitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
+                ResetWebsitesWithUrl();
+            }
+        }
+        private void ResetWebsitesWithUrl()
+        {
+            for (int i = 0; i < WebsitesWithURL.RowCount;)
+            {
+                WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
+                i++;
+                WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
+                i++;
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void myListBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            selectedItemIndex = -1;
+            if (e.Button != MouseButtons.Right) return;
+            var index = SitesList.IndexFromPoint(e.Location);
+
+            listboxContextMenu.Show(Cursor.Position);
+            if (index != ListBox.NoMatches)
+            {
+                selectedItemIndex = index;
+                SitesList.SetSelected(index, true);
+                listboxContextMenu.Visible = true;
+            }
+            else
+            {
+                listboxContextMenu.Visible = false;
+            }
+        }
+        private void ContextMenySettings()
+        {
+            var toolStripMenuItem1 = new ToolStripMenuItem { Text = "Edit" };
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+
+            var toolStripDeleat = new ToolStripMenuItem { Text = "Deleat" };
+            toolStripDeleat.Click += toolStripDeleat_Click;
+
+            listboxContextMenu.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripDeleat });
+            SitesList.ContextMenuStrip = listboxContextMenu;
+            SitesList.MouseUp += myListBox_MouseUp;
         }
 
         private void Courses_Load(object sender, EventArgs e)
         {
 
+            ContextMenySettings();
+
             for (int i = 0; i < WebsitesWithURL.RowCount; i++)
             {
-                WebsitesWithURL.GetControlFromPosition(2, i).Click += CommonBtn_Click;
+                WebsitesWithURL.GetControlFromPosition(2, i).Click += CopyButton_Click;
             }
 
-            using (StreamReader file = File.OpenText(@"jsons\course.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                CoursesWithLinks = (List<Course>)serializer.Deserialize(file, typeof(List<Course>));
-            }
-
-            CoursesWithLinks = CoursesWithLinks ?? new List<Course>();
-            CoursesWithLinks?.ForEach(course => CoursesList.Items.Add(course.Name));
+            SitesWithLinks = JsonWorker.DeserializeJson();
+            SitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
 
         }
 
-        private void CommonBtn_Click(object sender, EventArgs e)
+        private void CopyButton_Click(object sender, EventArgs e)
         {
             var msg = (Button)sender;
             var str = int.Parse(msg.Name[msg.Name.Length - 1].ToString());
@@ -56,29 +111,24 @@ namespace UTM_marker
             Clipboard.SetText($"{url}");
 
         }
-        private void CoursesList_SelectedIndexChanged(object sender, EventArgs e)
+        private void SitesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var courseName = CoursesList.SelectedItem;
-            Course courseSel = null;
-            foreach (var courseWithLink in CoursesWithLinks)
+            if (SitesList.SelectedIndex != ListBox.NoMatches)
             {
-                if (courseWithLink.Name == courseName)
+                Course currentSite = SitesWithLinks[SitesList.SelectedIndex];
+                int i = 0;
+                foreach (var web in currentSite.Websites)
                 {
-                    courseSel = courseWithLink;
-                    break;
+                    string webName = web.Name;
+                    string url = web.UTMparam.LinkForWin;
+                    string shortUrl = web.UTMparam.ShortLink;
+                    WebsitesWithURL.GetControlFromPosition(1, i).Text = url;
+                    i++;
+                    WebsitesWithURL.GetControlFromPosition(1, i).Text = shortUrl;
+                    i++;
                 }
             }
-            int i = 0;
-            foreach (var web in courseSel.Websites)
-            {
-                string webName = web.Name;
-                string url = web.UTMparam.LinkForWin;
-                string shortUrl = web.UTMparam.ShortLink;
-                WebsitesWithURL.GetControlFromPosition(1, i).Text = url;
-                i++;
-                WebsitesWithURL.GetControlFromPosition(1, i).Text = shortUrl;
-                i++;
-            }
+
         }
     }
 }
