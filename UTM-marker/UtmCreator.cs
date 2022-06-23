@@ -16,10 +16,10 @@ namespace UTM_marker
 {
     public partial class UtmCreator : Form
     {
-        public List<Course> SitesWithLinks { get; set; }
+        public List<Site> SitesWithLinks { get; set; }
         List<Website> websites = new List<Website>();
         ListBox SitesList = new ListBox();
-        public UtmCreator(List<Course> sitesWithLinks, ListBox sitesList)
+        public UtmCreator(List<Site> sitesWithLinks, ListBox sitesList)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -31,7 +31,7 @@ namespace UTM_marker
 
         private void CreateUtmLinks_Click(object sender, EventArgs e)
         {
-            string courseName = Course.Text;
+            string courseName = Site.Text;
             string url = Link.Text;
 
             if (SiteExistenceCheck(courseName))
@@ -50,8 +50,8 @@ namespace UTM_marker
                 MessageBox.Show($"{ex.Message}\nShort link has not been added");
             }
             SitesList.Items.Add(courseName);
-            var course = new Course(courseName, url, websites);
-            SitesWithLinks.Add(course);
+            var site = new Site(courseName, url, websites);
+            SitesWithLinks.Add(site);
 
             JsonWorker.SerializeJson(SitesWithLinks);
             MessageBox.Show("Site has been added");

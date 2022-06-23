@@ -15,7 +15,7 @@ namespace UTM_marker
 {
     public partial class Links : Form
     {
-        List<Course> SitesWithLinks = new List<Course>();
+        List<Site> SitesWithLinks = new List<Site>();
         private int selectedItemIndex;
         public Links()
         {
@@ -28,7 +28,6 @@ namespace UTM_marker
             utmCreateForm.Show();
         }
 
-
         private void toolStripDeleat_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to deleat site", "Confirmation", MessageBoxButtons.YesNo);
@@ -39,16 +38,6 @@ namespace UTM_marker
                 JsonWorker.SerializeJson(SitesWithLinks);
                 SitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
                 ResetWebsitesWithUrl();
-            }
-        }
-        private void ResetWebsitesWithUrl()
-        {
-            for (int i = 0; i < WebsitesWithURL.RowCount;)
-            {
-                WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
-                i++;
-                WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
-                i++;
             }
         }
 
@@ -116,7 +105,7 @@ namespace UTM_marker
         {
             if (SitesList.SelectedIndex != ListBox.NoMatches)
             {
-                Course currentSite = SitesWithLinks[SitesList.SelectedIndex];
+                Site currentSite = SitesWithLinks[SitesList.SelectedIndex];
                 int i = 0;
                 foreach (var web in currentSite.Websites)
                 {
@@ -130,6 +119,17 @@ namespace UTM_marker
                 }
             }
 
+        }
+
+        private void ResetWebsitesWithUrl()
+        {
+            for (int i = 0; i < WebsitesWithURL.RowCount;)
+            {
+                WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
+                i++;
+                WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
+                i++;
+            }
         }
     }
 }

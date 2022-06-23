@@ -12,11 +12,11 @@ namespace UTM_marker
 {
     public partial class UtmEditor : Form
     {
-        public List<Course> SitesWithLinks { get; set; }
+        public List<Site> SitesWithLinks { get; set; }
         List<Website> websites = new List<Website>();
         ListBox SitesList = new ListBox();
         private int selectedItemIndex;
-        public UtmEditor(List<Course> sitesWithLinks, ListBox sitesList,int selectedItemIndex)
+        public UtmEditor(List<Site> sitesWithLinks, ListBox sitesList,int selectedItemIndex)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -27,7 +27,7 @@ namespace UTM_marker
         private bool SiteExistenceCheck(string siteName) => SitesList.Items.Contains(siteName);
         private void ChangeUtmLinks_Click(object sender, EventArgs e)
         {
-            string courseName = Course.Text;
+            string courseName = Site.Text;
             string url = Link.Text;
 
             if (SiteExistenceCheck(courseName))
@@ -46,8 +46,8 @@ namespace UTM_marker
                 MessageBox.Show($"{ex.Message}\nShort link has not been changed");
             }
             SitesList.Items[selectedItemIndex]=courseName;
-            var course = new Course(courseName, url, websites);
-            SitesWithLinks[selectedItemIndex]=(course);
+            var site = new Site(courseName, url, websites);
+            SitesWithLinks[selectedItemIndex]=(site);
 
             JsonWorker.SerializeJson(SitesWithLinks);
             MessageBox.Show("Site has been changed");
@@ -57,6 +57,9 @@ namespace UTM_marker
 
         private void UtmEditor_Load(object sender, EventArgs e)
         {
+            Site.Text = SitesWithLinks[selectedItemIndex].Name;
+            Link.Text= SitesWithLinks[selectedItemIndex].Link;
+
             var VkSite = new Website("Vk", new UtmLink("myAnalytics", "social", "vk"));
             var TgSite = new Website("Tg", new UtmLink("myAnalytics", "social", "tg"));
             var InstSite = new Website("Inst", new UtmLink("myAnalytics", "social", "inst"));

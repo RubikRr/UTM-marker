@@ -11,7 +11,7 @@ namespace UTM_marker
     public static class JsonWorker
     {
        
-        static public void SerializeJson(List<Course> CoursesWithLinks)
+        static public void SerializeJson(List<Site> CoursesWithLinks)
         {
             using (StreamWriter file = File.CreateText(@"jsons\course.json"))
             {
@@ -20,15 +20,15 @@ namespace UTM_marker
             }
         }
 
-        static public List<Course> DeserializeJson()
+        static public List<Site> DeserializeJson()
         {
-            List<Course> CoursesWithLinks = new List<Course>();
+            List<Site> CoursesWithLinks = new List<Site>();
             using (StreamReader file = File.OpenText(@"jsons\course.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                CoursesWithLinks = (List<Course>)serializer.Deserialize(file, typeof(List<Course>));
+                CoursesWithLinks = (List<Site>)serializer.Deserialize(file, typeof(List<Site>));
             }
-            return CoursesWithLinks = CoursesWithLinks ?? new List<Course>();
+            return CoursesWithLinks = CoursesWithLinks ?? new List<Site>();
             
         }
     }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace UTM_marker
 {
-    public  class Course
+    public  class Site
     {
         public string Name { get;}
         public string Link { get; }
 
         public List<Website> Websites { get; set; }
 
-        public Course(string name, string link, List<Website> websites)
+        public Site(string name, string link, List<Website> websites)
         {
             Name = name;
             Link = link;

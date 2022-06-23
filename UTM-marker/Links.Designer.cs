@@ -64,6 +64,7 @@
             this.TaplinkShortUrl = new System.Windows.Forms.TextBox();
             this.EmailShortUrl = new System.Windows.Forms.TextBox();
             this.listboxContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.WebsitesWithURL.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -456,14 +457,24 @@
             this.listboxContextMenu.Size = new System.Drawing.Size(61, 4);
             this.listboxContextMenu.Text = "listboxContextMenu";
             // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(984, 24);
+            this.MenuStrip.TabIndex = 3;
+            this.MenuStrip.Text = "menuStrip1";
+            // 
             // Links
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 491);
+            this.Controls.Add(this.MenuStrip);
             this.Controls.Add(this.WebsitesWithURL);
             this.Controls.Add(this.SitesList);
             this.Controls.Add(this.CreateCourse);
+            this.MainMenuStrip = this.MenuStrip;
             this.MinimumSize = new System.Drawing.Size(1000, 530);
             this.Name = "Links";
             this.Text = "Links";
@@ -471,6 +482,7 @@
             this.WebsitesWithURL.ResumeLayout(false);
             this.WebsitesWithURL.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -510,5 +522,6 @@
         private System.Windows.Forms.TextBox TaplinkShortUrl;
         private System.Windows.Forms.TextBox EmailShortUrl;
         private System.Windows.Forms.ContextMenuStrip listboxContextMenu;
+        private System.Windows.Forms.MenuStrip MenuStrip;
     }
 }

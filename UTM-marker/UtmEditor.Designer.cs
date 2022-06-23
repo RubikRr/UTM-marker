@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Course = new System.Windows.Forms.TextBox();
-            this.CourseLabel = new System.Windows.Forms.Label();
+            this.Site = new System.Windows.Forms.TextBox();
+            this.SiteLabel = new System.Windows.Forms.Label();
             this.LinkLabel = new System.Windows.Forms.Label();
             this.ChangeUtmLinks = new System.Windows.Forms.Button();
             this.Link = new System.Windows.Forms.TextBox();
@@ -43,8 +43,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.Course);
-            this.panel1.Controls.Add(this.CourseLabel);
+            this.panel1.Controls.Add(this.Site);
+            this.panel1.Controls.Add(this.SiteLabel);
             this.panel1.Controls.Add(this.LinkLabel);
             this.panel1.Controls.Add(this.ChangeUtmLinks);
             this.panel1.Controls.Add(this.Link);
@@ -54,26 +54,26 @@
             this.panel1.Size = new System.Drawing.Size(690, 420);
             this.panel1.TabIndex = 6;
             // 
-            // Course
+            // Site
             // 
-            this.Course.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Site.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Course.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Course.Location = new System.Drawing.Point(6, 118);
-            this.Course.Name = "Course";
-            this.Course.Size = new System.Drawing.Size(670, 35);
-            this.Course.TabIndex = 5;
+            this.Site.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Site.Location = new System.Drawing.Point(6, 118);
+            this.Site.Name = "Site";
+            this.Site.Size = new System.Drawing.Size(670, 35);
+            this.Site.TabIndex = 5;
             // 
-            // CourseLabel
+            // SiteLabel
             // 
-            this.CourseLabel.AutoSize = true;
-            this.CourseLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CourseLabel.Location = new System.Drawing.Point(6, 59);
-            this.CourseLabel.Name = "CourseLabel";
-            this.CourseLabel.Size = new System.Drawing.Size(164, 30);
-            this.CourseLabel.TabIndex = 7;
-            this.CourseLabel.Text = "Название курса";
+            this.SiteLabel.AutoSize = true;
+            this.SiteLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SiteLabel.Location = new System.Drawing.Point(6, 59);
+            this.SiteLabel.Name = "SiteLabel";
+            this.SiteLabel.Size = new System.Drawing.Size(164, 30);
+            this.SiteLabel.TabIndex = 7;
+            this.SiteLabel.Text = "Название сайта";
             // 
             // LinkLabel
             // 
@@ -138,8 +138,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button CreateUtmLinks;
-        private System.Windows.Forms.TextBox Course;
-        private System.Windows.Forms.Label CourseLabel;
+        private System.Windows.Forms.TextBox Site;
+        private System.Windows.Forms.Label SiteLabel;
         private System.Windows.Forms.Label LinkLabel;
         private System.Windows.Forms.Button ChangeUtmLinks;
         private System.Windows.Forms.TextBox Link;
