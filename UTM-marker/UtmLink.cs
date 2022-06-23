@@ -41,7 +41,7 @@ namespace UTM_marker
             ShortLink=GetShortLink(url).Result;
         }
 
-        static  async Task<string> GetShortLink(string link)
+       public  static  async Task<string> GetShortLink(string link)
         {
             var url = $"https://clck.ru/--?url={link}";
             try

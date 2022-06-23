@@ -47,6 +47,12 @@ namespace UTM_marker
             utmChangeForm.Show();
         }
 
+        private void menuStripEdit_Click(object sender, EventArgs e)
+        {
+            var shortLinkForm= new ShortLinkCreator();
+            shortLinkForm.Show();
+        }
+
         private void myListBox_MouseUp(object sender, MouseEventArgs e)
         {
             selectedItemIndex = -1;
@@ -78,10 +84,20 @@ namespace UTM_marker
             SitesList.MouseUp += myListBox_MouseUp;
         }
 
+        public void MenuStripSettings()
+        {
+            ToolStripMenuItem fileItem = new ToolStripMenuItem("Ссылка");
+
+            fileItem.DropDownItems.Add("Укоротить").Click+=menuStripEdit_Click;
+          
+            MenuStrip.Items.Add(fileItem);
+        }
+
         private void Courses_Load(object sender, EventArgs e)
         {
 
             ContextMenySettings();
+            MenuStripSettings();
 
             for (int i = 0; i < WebsitesWithURL.RowCount; i++)
             {
