@@ -11,24 +11,24 @@ namespace UTM_marker
     public static class JsonWorker
     {
        
-        static public void SerializeJson(List<Site> CoursesWithLinks)
+        static public void SerializeJson(List<Site> SitesWithLinks)
         {
-            using (StreamWriter file = File.CreateText(@"jsons\course.json"))
+            using (StreamWriter file = File.CreateText(@"jsons\sites.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, CoursesWithLinks);
+                serializer.Serialize(file, SitesWithLinks);
             }
         }
 
         static public List<Site> DeserializeJson()
         {
-            List<Site> CoursesWithLinks = new List<Site>();
-            using (StreamReader file = File.OpenText(@"jsons\course.json"))
+            List<Site> SitesWithLinks = new List<Site>();
+            using (StreamReader file = File.OpenText(@"jsons\sites.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                CoursesWithLinks = (List<Site>)serializer.Deserialize(file, typeof(List<Site>));
+                SitesWithLinks = (List<Site>)serializer.Deserialize(file, typeof(List<Site>));
             }
-            return CoursesWithLinks = CoursesWithLinks ?? new List<Site>();
+            return SitesWithLinks ?? new List<Site>();
             
         }
     }

@@ -101,7 +101,7 @@
             this.Controls.Add(this.ShortLink);
             this.MinimumSize = new System.Drawing.Size(730, 475);
             this.Name = "ShortLinkCreator";
-            this.Text = "ShortLinkCreator";
+            this.Text = "Short link creator";
             this.ResumeLayout(false);
             this.PerformLayout();
 

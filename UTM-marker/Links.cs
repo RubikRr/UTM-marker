@@ -16,7 +16,7 @@ namespace UTM_marker
     public partial class Links : Form
     {
         List<Site> SitesWithLinks = new List<Site>();
-        private int selectedItemIndex;
+        private int selectedSiteIndex;
         public Links()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace UTM_marker
             DialogResult dialogResult = MessageBox.Show("Do you want to deleat site", "Confirmation", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                SitesWithLinks.RemoveAt(selectedItemIndex);
+                SitesWithLinks.RemoveAt(selectedSiteIndex);
                 SitesList.Items.Clear();
                 JsonWorker.SerializeJson(SitesWithLinks);
                 SitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
@@ -43,7 +43,7 @@ namespace UTM_marker
 
         private void toolStripEdit_Click(object sender, EventArgs e)
         {
-            var utmChangeForm = new UtmEditor(SitesWithLinks, SitesList, selectedItemIndex);
+            var utmChangeForm = new UtmEditor(SitesWithLinks, SitesList, selectedSiteIndex);
             utmChangeForm.Show();
         }
 
@@ -55,14 +55,14 @@ namespace UTM_marker
 
         private void myListBox_MouseUp(object sender, MouseEventArgs e)
         {
-            selectedItemIndex = -1;
+            selectedSiteIndex = -1;
             if (e.Button != MouseButtons.Right) return;
             var index = SitesList.IndexFromPoint(e.Location);
 
             listboxContextMenu.Show(Cursor.Position);
             if (index != ListBox.NoMatches)
             {
-                selectedItemIndex = index;
+                selectedSiteIndex = index;
                 SitesList.SetSelected(index, true);
                 listboxContextMenu.Visible = true;
             }
@@ -86,11 +86,12 @@ namespace UTM_marker
 
         public void MenuStripSettings()
         {
-            ToolStripMenuItem fileItem = new ToolStripMenuItem("Ссылка");
+            ToolStripMenuItem shortLink = new ToolStripMenuItem("Ссылка");
+            shortLink.Image = Image.FromFile($"icons/external-link.png");
 
-            fileItem.DropDownItems.Add("Укоротить").Click+=menuStripEdit_Click;
+            shortLink.DropDownItems.Add("Укоротить").Click+=menuStripEdit_Click;
           
-            MenuStrip.Items.Add(fileItem);
+            menuStrip.Items.Add(shortLink);
         }
 
         private void Courses_Load(object sender, EventArgs e)
@@ -126,7 +127,7 @@ namespace UTM_marker
                 foreach (var web in currentSite.Websites)
                 {
                     string webName = web.Name;
-                    string url = web.UTMparam.LinkForWin;
+                    string url = web.UTMparam.LinkForUser;
                     string shortUrl = web.UTMparam.ShortLink;
                     WebsitesWithURL.GetControlFromPosition(1, i).Text = url;
                     i++;

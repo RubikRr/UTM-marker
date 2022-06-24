@@ -17,7 +17,7 @@ namespace UTM_marker
     public partial class UtmCreator : Form
     {
         public List<Site> SitesWithLinks { get; set; }
-        List<Website> websites = new List<Website>();
+        List<Website> Websites = new List<Website>();
         ListBox SitesList = new ListBox();
         public UtmCreator(List<Site> sitesWithLinks, ListBox sitesList)
         {
@@ -36,21 +36,21 @@ namespace UTM_marker
 
             if (SiteExistenceCheck(courseName))
             {
-                DialogResult dialogResult = MessageBox.Show("A site with the given name exists.\nWould you like to create a website with the same name?", "Confirmation", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("A site with the given name exists.\nWould you like to create a site with the same name?", "Confirmation", MessageBoxButtons.YesNo);
                 if(dialogResult==DialogResult.No)
                     return;
             }
-            websites.ForEach(site => site.UTMparam.AddUTMmark(url));
+            Websites.ForEach(site => site.UTMparam.AddUTMmark(url));
             try
             {
-                websites.ForEach(site => site.UTMparam.CreateShortLink(site.UTMparam.LinkForApi));
+                Websites.ForEach(site => site.UTMparam.CreateShortLink(site.UTMparam.LinkForApi));
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}\nShort link has not been added");
             }
             SitesList.Items.Add(courseName);
-            var site = new Site(courseName, url, websites);
+            var site = new Site(courseName, url, Websites);
             SitesWithLinks.Add(site);
 
             JsonWorker.SerializeJson(SitesWithLinks);
@@ -66,7 +66,7 @@ namespace UTM_marker
             var InstSite = new Website("Inst", new UtmLink("myAnalytics", "social", "inst"));
             var TaplinkSite = new Website("Taplink", new UtmLink("myAnalytics", "organic", "taplink"));
             var EmailSite = new Website("Email", new UtmLink("myAnalytics", "email", "stepik"));
-            websites.AddRange(new Website[] { VkSite, TgSite, InstSite, TaplinkSite, EmailSite });
+            Websites.AddRange(new Website[] { VkSite, TgSite, InstSite, TaplinkSite, EmailSite });
         }
     }
 }
