@@ -8,6 +8,7 @@ namespace UTM_marker
 {
     public  class Site
     {
+
         public string Name { get;}
         public string Link { get; }
 
