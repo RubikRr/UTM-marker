@@ -28,10 +28,10 @@ namespace UTM_marker
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{ex.Message}\nShort link has not been created");
+                MessageBox.Show($"{ex.Message}\nКороткая ссылка не была создана");
                 return;
             }
-            MessageBox.Show("Short link has been created");
+            MessageBox.Show("Короткая ссылка была создана");
 
         }
     }

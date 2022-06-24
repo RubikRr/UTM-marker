@@ -74,7 +74,7 @@
             this.CreateUtmLinks.Name = "CreateUtmLinks";
             this.CreateUtmLinks.Size = new System.Drawing.Size(150, 40);
             this.CreateUtmLinks.TabIndex = 9;
-            this.CreateUtmLinks.Text = "Create";
+            this.CreateUtmLinks.Text = "Создать";
             this.CreateUtmLinks.UseVisualStyleBackColor = true;
             this.CreateUtmLinks.Click += new System.EventHandler(this.CreateUtmLinks_Click);
             // 
@@ -101,7 +101,7 @@
             this.Controls.Add(this.ShortLink);
             this.MinimumSize = new System.Drawing.Size(730, 475);
             this.Name = "ShortLinkCreator";
-            this.Text = "Short link creator";
+            this.Text = "Короткая ссылка";
             this.ResumeLayout(false);
             this.PerformLayout();
 

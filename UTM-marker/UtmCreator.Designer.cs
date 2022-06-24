@@ -77,7 +77,7 @@
             this.CreateUtmLinks.Name = "CreateUtmLinks";
             this.CreateUtmLinks.Size = new System.Drawing.Size(150, 40);
             this.CreateUtmLinks.TabIndex = 4;
-            this.CreateUtmLinks.Text = "Create";
+            this.CreateUtmLinks.Text = "Создать";
             this.CreateUtmLinks.UseVisualStyleBackColor = true;
             this.CreateUtmLinks.Click += new System.EventHandler(this.CreateUtmLinks_Click);
             // 

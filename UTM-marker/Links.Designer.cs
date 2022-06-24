@@ -75,7 +75,7 @@
             this.CreateCourse.Name = "CreateCourse";
             this.CreateCourse.Size = new System.Drawing.Size(151, 44);
             this.CreateCourse.TabIndex = 0;
-            this.CreateCourse.Text = "Create links";
+            this.CreateCourse.Text = "Создать ссылки";
             this.CreateCourse.UseVisualStyleBackColor = true;
             this.CreateCourse.Click += new System.EventHandler(this.CreateCourse_Click);
             // 
@@ -477,7 +477,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.MinimumSize = new System.Drawing.Size(1000, 530);
             this.Name = "Links";
-            this.Text = "Links";
+            this.Text = "Ссылки";
             this.Load += new System.EventHandler(this.Courses_Load);
             this.WebsitesWithURL.ResumeLayout(false);
             this.WebsitesWithURL.PerformLayout();

@@ -30,7 +30,7 @@ namespace UTM_marker
 
         private void toolStripDeleat_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to deleat site", "Confirmation", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите удалить сайт?", "Подтверждение", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 SitesWithLinks.RemoveAt(selectedSiteIndex);
@@ -73,10 +73,10 @@ namespace UTM_marker
         }
         private void ContextMenySettings()
         {
-            var toolStripMenuItem1 = new ToolStripMenuItem { Text = "Edit" };
+            var toolStripMenuItem1 = new ToolStripMenuItem { Text = "Изменить" };
             toolStripMenuItem1.Click += toolStripEdit_Click;
 
-            var toolStripDeleat = new ToolStripMenuItem { Text = "Deleat" };
+            var toolStripDeleat = new ToolStripMenuItem { Text = "Удалить" };
             toolStripDeleat.Click += toolStripDeleat_Click;
 
             listboxContextMenu.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripDeleat });
@@ -86,10 +86,10 @@ namespace UTM_marker
 
         public void MenuStripSettings()
         {
-            ToolStripMenuItem shortLink = new ToolStripMenuItem("Ссылка");
+            ToolStripMenuItem shortLink = new ToolStripMenuItem("Укоротить ссылку");
             shortLink.Image = Image.FromFile($"icons/external-link.png");
 
-            shortLink.DropDownItems.Add("Укоротить").Click+=menuStripEdit_Click;
+            shortLink.Click+=menuStripEdit_Click;
           
             menuStrip.Items.Add(shortLink);
         }

@@ -93,7 +93,7 @@
             this.ChangeUtmLinks.Name = "ChangeUtmLinks";
             this.ChangeUtmLinks.Size = new System.Drawing.Size(150, 40);
             this.ChangeUtmLinks.TabIndex = 9;
-            this.ChangeUtmLinks.Text = "Change";
+            this.ChangeUtmLinks.Text = "Изменить";
             this.ChangeUtmLinks.UseVisualStyleBackColor = true;
             this.ChangeUtmLinks.Click += new System.EventHandler(this.ChangeUtmLinks_Click);
             // 

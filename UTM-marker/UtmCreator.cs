@@ -36,7 +36,7 @@ namespace UTM_marker
 
             if (SiteExistenceCheck(courseName))
             {
-                DialogResult dialogResult = MessageBox.Show("A site with the given name exists.\nWould you like to create a site with the same name?", "Confirmation", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Сайт с таким названием существует.\nХотите создать сайт с таким же названием?", "Подтверждение", MessageBoxButtons.YesNo);
                 if(dialogResult==DialogResult.No)
                     return;
             }
@@ -47,14 +47,14 @@ namespace UTM_marker
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{ex.Message}\nShort link has not been added");
+                MessageBox.Show($"{ex.Message}\nКороткая ссылка не была добавлена");
             }
             SitesList.Items.Add(courseName);
             var site = new Site(courseName, url, Websites);
             SitesWithLinks.Add(site);
 
             JsonWorker.SerializeJson(SitesWithLinks);
-            MessageBox.Show("Site has been added");
+            MessageBox.Show("Сайт добавлен");
             this.Close();
 
         }
