@@ -65,7 +65,9 @@ namespace UTM_marker
             var InstSite = new Website("Inst", new UtmLink("myAnalytics", "social", "inst"));
             var TaplinkSite = new Website("Taplink", new UtmLink("myAnalytics", "organic", "taplink"));
             var EmailSite = new Website("Email", new UtmLink("myAnalytics", "email", "stepik"));
-            Websites.AddRange(new Website[] { VkSite, TgSite, InstSite, TaplinkSite, EmailSite });
+            var YouTubeSite = new Website("YouTube", new UtmLink("myAnalytics", "social", "youtube"));
+            var PersonalSite = new Website("Personal", new UtmLink("myAnalytics", "organic", "personal"));
+            Websites.AddRange(new Website[] { VkSite, TgSite, InstSite, TaplinkSite, EmailSite, YouTubeSite, PersonalSite });
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace UTM_marker
 {
@@ -112,9 +113,14 @@ namespace UTM_marker
 
         private void CopyButton_Click(object sender, EventArgs e)
         {
+           
             var msg = (Button)sender;
-            var str = int.Parse(msg.Name[msg.Name.Length - 1].ToString());
-            var url = WebsitesWithURL.GetControlFromPosition(1, str).Text;
+            string phoneNumber = msg.Name;
+            string pattern = @"\D";
+            string target = "";
+            Regex regex = new Regex(pattern);
+            string result = regex.Replace(phoneNumber, target);
+            var url = WebsitesWithURL.GetControlFromPosition(1, int.Parse(result)).Text;
             Clipboard.SetText($"{url}");
 
         }

@@ -188,10 +188,65 @@
         7gPJppHk5JEjWUUmMHRMZysW/VChJy6FLOe+gGvep9phbLX6BBuWMDGvCPWzAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="CopyButton10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAdhtAAHYbQHh/FGbAAAAB3RJ
+        TUUH5QIKEwwIIy5JggAAAXxJREFUWEftlwlOwzAURMtyCfZjIG6X01Vcg0WcAiHmSTPiqypu7KIGUL80
+        SvKX8dj+TZ3V0X6NTdMEzoUr4U643RNwwAWnR2kYSS5YCy/Cs68jSC1ccHqUhpEkoPxJ+BDehBER1FAL
+        B1xwepSGkeTkEDwI18KNr3PBjO+FTKBbQGbC/YlwIfSIqAIyEerbPYFTqAIoYvDensgKvhtZCWLf9wRO
+        oQrIjEZ6gjzqQAS1ewKngyGJgBCM9ERyqc0EugXkmVhPT2QLqam8wwJC+Ci82tcCOeRGcPx/VwCxRbdg
+        cQEhPPZACBMHPBOvyKv31M+Vx6MWw+lgEucKyMqcCWb7MnzCjwjIQJtbkKXe+o7HJ/wPAcTYTwaqR7bm
+        3yw+ofJy72gxnA4mcZsAZ883alzb5sHpYBIXEcBSsp8g3X5QATmWg3m/3x1GjWv7eEhycj2QsCL4ekDN
+        7gPJppHk5JEjWUUmMHRMZysW/VChJy6FLOe+gGvep9phbLX6BBuWMDGvCPWzAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="CopyButton11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAdhtAAHYbQHh/FGbAAAAB3RJ
+        TUUH5QIKEwwIIy5JggAAAXxJREFUWEftlwlOwzAURMtyCfZjIG6X01Vcg0WcAiHmSTPiqypu7KIGUL80
+        SvKX8dj+TZ3V0X6NTdMEzoUr4U643RNwwAWnR2kYSS5YCy/Cs68jSC1ccHqUhpEkoPxJ+BDehBER1FAL
+        B1xwepSGkeTkEDwI18KNr3PBjO+FTKBbQGbC/YlwIfSIqAIyEerbPYFTqAIoYvDensgKvhtZCWLf9wRO
+        oQrIjEZ6gjzqQAS1ewKngyGJgBCM9ERyqc0EugXkmVhPT2QLqam8wwJC+Ci82tcCOeRGcPx/VwCxRbdg
+        cQEhPPZACBMHPBOvyKv31M+Vx6MWw+lgEucKyMqcCWb7MnzCjwjIQJtbkKXe+o7HJ/wPAcTYTwaqR7bm
+        3yw+ofJy72gxnA4mcZsAZ883alzb5sHpYBIXEcBSsp8g3X5QATmWg3m/3x1GjWv7eEhycj2QsCL4ekDN
+        7gPJppHk5JEjWUUmMHRMZysW/VChJy6FLOe+gGvep9phbLX6BBuWMDGvCPWzAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="CopyButton12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAdhtAAHYbQHh/FGbAAAAB3RJ
+        TUUH5QIKEwwIIy5JggAAAXxJREFUWEftlwlOwzAURMtyCfZjIG6X01Vcg0WcAiHmSTPiqypu7KIGUL80
+        SvKX8dj+TZ3V0X6NTdMEzoUr4U643RNwwAWnR2kYSS5YCy/Cs68jSC1ccHqUhpEkoPxJ+BDehBER1FAL
+        B1xwepSGkeTkEDwI18KNr3PBjO+FTKBbQGbC/YlwIfSIqAIyEerbPYFTqAIoYvDensgKvhtZCWLf9wRO
+        oQrIjEZ6gjzqQAS1ewKngyGJgBCM9ERyqc0EugXkmVhPT2QLqam8wwJC+Ci82tcCOeRGcPx/VwCxRbdg
+        cQEhPPZACBMHPBOvyKv31M+Vx6MWw+lgEucKyMqcCWb7MnzCjwjIQJtbkKXe+o7HJ/wPAcTYTwaqR7bm
+        3yw+ofJy72gxnA4mcZsAZ883alzb5sHpYBIXEcBSsp8g3X5QATmWg3m/3x1GjWv7eEhycj2QsCL4ekDN
+        7gPJppHk5JEjWUUmMHRMZysW/VChJy6FLOe+gGvep9phbLX6BBuWMDGvCPWzAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="CopyButton13.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAdhtAAHYbQHh/FGbAAAAB3RJ
+        TUUH5QIKEwwIIy5JggAAAXxJREFUWEftlwlOwzAURMtyCfZjIG6X01Vcg0WcAiHmSTPiqypu7KIGUL80
+        SvKX8dj+TZ3V0X6NTdMEzoUr4U643RNwwAWnR2kYSS5YCy/Cs68jSC1ccHqUhpEkoPxJ+BDehBER1FAL
+        B1xwepSGkeTkEDwI18KNr3PBjO+FTKBbQGbC/YlwIfSIqAIyEerbPYFTqAIoYvDensgKvhtZCWLf9wRO
+        oQrIjEZ6gjzqQAS1ewKngyGJgBCM9ERyqc0EugXkmVhPT2QLqam8wwJC+Ci82tcCOeRGcPx/VwCxRbdg
+        cQEhPPZACBMHPBOvyKv31M+Vx6MWw+lgEucKyMqcCWb7MnzCjwjIQJtbkKXe+o7HJ/wPAcTYTwaqR7bm
+        3yw+ofJy72gxnA4mcZsAZ883alzb5sHpYBIXEcBSsp8g3X5QATmWg3m/3x1GjWv7eEhycj2QsCL4ekDN
+        7gPJppHk5JEjWUUmMHRMZysW/VChJy6FLOe+gGvep9phbLX6BBuWMDGvCPWzAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="listboxContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>178, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>33</value>
   </metadata>
 </root>
