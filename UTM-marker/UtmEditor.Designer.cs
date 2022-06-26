@@ -34,7 +34,6 @@
             this.LinkLabel = new System.Windows.Forms.Label();
             this.ChangeUtmLinks = new System.Windows.Forms.Button();
             this.Link = new System.Windows.Forms.TextBox();
-            this.CreateUtmLinks = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,8 +47,7 @@
             this.panel1.Controls.Add(this.LinkLabel);
             this.panel1.Controls.Add(this.ChangeUtmLinks);
             this.panel1.Controls.Add(this.Link);
-            this.panel1.Controls.Add(this.CreateUtmLinks);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 420);
             this.panel1.TabIndex = 6;
@@ -108,23 +106,13 @@
             this.Link.Size = new System.Drawing.Size(670, 35);
             this.Link.TabIndex = 6;
             // 
-            // CreateUtmLinks
-            // 
-            this.CreateUtmLinks.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.CreateUtmLinks.Location = new System.Drawing.Point(502, 649);
-            this.CreateUtmLinks.MaximumSize = new System.Drawing.Size(150, 40);
-            this.CreateUtmLinks.Name = "CreateUtmLinks";
-            this.CreateUtmLinks.Size = new System.Drawing.Size(150, 40);
-            this.CreateUtmLinks.TabIndex = 4;
-            this.CreateUtmLinks.Text = "Create";
-            this.CreateUtmLinks.UseVisualStyleBackColor = true;
-            // 
             // UtmEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 436);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(730, 475);
             this.Name = "UtmEditor";
             this.Text = "Utm";
             this.Load += new System.EventHandler(this.UtmEditor_Load);
@@ -137,7 +125,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button CreateUtmLinks;
         private System.Windows.Forms.TextBox Site;
         private System.Windows.Forms.Label SiteLabel;
         private System.Windows.Forms.Label LinkLabel;
