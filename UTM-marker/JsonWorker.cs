@@ -10,7 +10,7 @@ namespace UTM_marker
 {
     public static class JsonWorker
     {
-       
+
         static public void SerializeJson(List<Site> SitesWithLinks)
         {
             using (StreamWriter file = File.CreateText(@"jsons\sites.json"))
@@ -20,7 +20,7 @@ namespace UTM_marker
             }
         }
 
-        static public List<Site> DeserializeJson()
+        static public List<Site> DeserializeSitesJson()
         {
             List<Site> SitesWithLinks = new List<Site>();
             using (StreamReader file = File.OpenText(@"jsons\sites.json"))
@@ -29,7 +29,23 @@ namespace UTM_marker
                 SitesWithLinks = (List<Site>)serializer.Deserialize(file, typeof(List<Site>));
             }
             return SitesWithLinks ?? new List<Site>();
-            
+        }
+
+        static public void SerializeUtmLinksJson(List<UtmLink> UtmLinks)
+        {
+
+        }
+
+        static public List<UtmLink> DeserializeUtmLinksJson()
+        {
+            List<UtmLink> UtmLinks = new List<UtmLink>();
+            using (StreamReader file = File.OpenText(@"jsons\utmlinks.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                UtmLinks = (List<UtmLink>)serializer.Deserialize(file, typeof(List<UtmLink>));
+            }
+            return UtmLinks ?? new List<UtmLink>();
+
         }
     }
 }

@@ -22,6 +22,11 @@ namespace UTM_marker
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            var list = JsonWorker.DeserializeUtmLinksJson();
+            foreach (var link in list)
+            {
+                Console.WriteLine($"{link.Source} {link.Medium} {link.Campaign}");
+            }
         }
         private void CreateCourse_Click(object sender, EventArgs e)
         {
@@ -106,7 +111,7 @@ namespace UTM_marker
                 WebsitesWithURL.GetControlFromPosition(2, i).Click += CopyButton_Click;
             }
 
-            SitesWithLinks = JsonWorker.DeserializeJson();
+            SitesWithLinks = JsonWorker.DeserializeSitesJson();
             SitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
 
         }
