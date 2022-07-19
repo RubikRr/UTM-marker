@@ -31,20 +31,20 @@ namespace UTM_marker
             return SitesWithLinks ?? new List<Site>();
         }
 
-        static public void SerializeUtmLinksJson(List<UtmLink> UtmLinks)
+        static public void SerializeUtmLinksJson(List<Website> UtmLinks)
         {
 
         }
 
-        static public List<UtmLink> DeserializeUtmLinksJson()
+        static public List<Website> DeserializeUtmLinksJson()
         {
-            List<UtmLink> UtmLinks = new List<UtmLink>();
+            List<Website> UtmLinks = new List<Website>();
             using (StreamReader file = File.OpenText(@"jsons\utmlinks.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                UtmLinks = (List<UtmLink>)serializer.Deserialize(file, typeof(List<UtmLink>));
+                UtmLinks = (List<Website>)serializer.Deserialize(file, typeof(List<Website>));
             }
-            return UtmLinks ?? new List<UtmLink>();
+            return UtmLinks ?? new List<Website>();
 
         }
     }

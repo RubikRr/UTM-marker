@@ -25,7 +25,7 @@ namespace UTM_marker
             var list = JsonWorker.DeserializeUtmLinksJson();
             foreach (var link in list)
             {
-                Console.WriteLine($"{link.Source} {link.Medium} {link.Campaign}");
+                Console.WriteLine($"{link.Name} {link.UTMparam.Source} {link.UTMparam.Medium} {link.UTMparam.Campaign}");
             }
         }
         private void CreateCourse_Click(object sender, EventArgs e)
