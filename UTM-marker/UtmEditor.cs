@@ -13,7 +13,7 @@ namespace UTM_marker
     public partial class UtmEditor : Form
     {
         public List<Site> SitesWithLinks { get; set; }
-        List<Website> UtmLinks = new List<Website>();
+        List<Website> Sources = new List<Website>();
         ListBox SitesList = new ListBox();
         private int selectedItemIndex;
         public UtmEditor(List<Site> sitesWithLinks,List<Website> utmLinks, ListBox sitesList,int selectedItemIndex)
@@ -21,7 +21,7 @@ namespace UTM_marker
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             SitesWithLinks = sitesWithLinks;
-            UtmLinks = utmLinks;
+            Sources = utmLinks;
             SitesList = sitesList;
             this.selectedItemIndex= selectedItemIndex;
         }
@@ -30,9 +30,9 @@ namespace UTM_marker
             string courseName = Site.Text;
             string url = Link.Text;
 
-            UtmLinks.ForEach(site => site.UTMparam.AddUTMmark(url));
+            Sources.ForEach(site => site.UTMparam.AddUTMmark(url));
             SitesList.Items[selectedItemIndex]=courseName;
-            var site = new Site(courseName, url, UtmLinks);
+            var site = new Site(courseName, url, Sources);
             SitesWithLinks[selectedItemIndex]=(site);
 
             JsonWorker.SerializeJson(SitesWithLinks);

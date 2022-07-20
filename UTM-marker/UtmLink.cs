@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,11 +16,11 @@ namespace UTM_marker
         public string Source { get; }
         public string Medium { get; }
         public string Campaign { get; }
-
+        [JsonIgnore]
         public string LinkForUser { get; set; }
-
-         public string LinkForApi{ get; set; }   
-
+        [JsonIgnore]
+        public string LinkForApi{ get; set; }
+        [JsonIgnore]
         public string ShortLink { get; set; }
 
         public UtmLink(string source, string medium, string campaign)

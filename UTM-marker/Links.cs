@@ -16,8 +16,9 @@ namespace UTM_marker
     public partial class Links : Form
     {
         List<Site> SitesWithLinks = new List<Site>();
-        List<Website> UtmLinks = new List<Website>();
+        List<Website> Sources = new List<Website>();
         private int selectedSiteIndex;
+
 
         public Links()
         {
@@ -32,24 +33,24 @@ namespace UTM_marker
             ShortLinkMenuStripSettings();
             AddSourceMenuStripSettings();
 
-            UtmLinks = JsonWorker.DeserializeUtmLinksJson();
+            Sources = JsonWorker.DeserializeUtmLinksJson();
             //foreach (var item in UtmLinks)
             //{
             //    Console.WriteLine($"{item.Name} {item.UTMparam.Source}");
             //}
-            var rowCount = UtmLinks.Count();
-            WebsitesWithURL.RowCount = rowCount;
+            var rowCount = Sources.Count();
+            WebsitesWithUtmLinks.RowCount = rowCount;
             for (int i = 0; i < rowCount; i++)
             {
-                var site = UtmLinks[i];
+                var site = Sources[i];
                 if (i == 0)
-                    WebsitesWithURL.RowStyles[0] = new RowStyle(SizeType.Percent, 100 / rowCount);
+                    WebsitesWithUtmLinks.RowStyles[0] = new RowStyle(SizeType.Percent, 100 / rowCount);
                 else
-                    WebsitesWithURL.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / rowCount));
+                    WebsitesWithUtmLinks.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / rowCount));
 
-                WebsitesWithURL.Controls.Add(CreateWebsiteLable(site.Name), 0, i);
-                WebsitesWithURL.Controls.Add(CreateWebsiteTextBox(site.Name), 1, i);
-                WebsitesWithURL.Controls.Add(CreateCopyButton(i), 2, i);
+                WebsitesWithUtmLinks.Controls.Add(CreateWebsiteLable(site.Name), 0, i);
+                WebsitesWithUtmLinks.Controls.Add(CreateWebsiteTextBox(site.Name), 1, i);
+                WebsitesWithUtmLinks.Controls.Add(CreateCopyButton(i), 2, i);
             }
 
             SitesWithLinks = JsonWorker.DeserializeSitesJson();
@@ -92,7 +93,7 @@ namespace UTM_marker
 
         private void CreateCourse_Click(object sender, EventArgs e)
         {
-            var utmCreateForm = new UtmCreator(SitesWithLinks,UtmLinks, SitesList);
+            var utmCreateForm = new UtmCreator(SitesWithLinks,Sources, SitesList);
             utmCreateForm.Show();
         }
 
@@ -104,8 +105,31 @@ namespace UTM_marker
 
         private void AddSourceMenuStripEdit_Click(object sender, EventArgs e)
         {
-
+            var addSourceForm = new AddTrafficSource(this,Sources, WebsitesWithUtmLinks);
+            addSourceForm.Show();
         }
+
+        public  void ChangeWebsitesTable()
+        {
+            WebsitesWithUtmLinks.RowCount++;
+            var rowCount = WebsitesWithUtmLinks.RowCount;
+            for (int i = 0; i < rowCount; i++)
+            {
+                if (i == rowCount - 1)
+                {
+                    var site = Sources[rowCount - 1];
+                    WebsitesWithUtmLinks.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / rowCount));
+
+                    WebsitesWithUtmLinks.Controls.Add(CreateWebsiteLable(site.Name), 0, i);
+                    WebsitesWithUtmLinks.Controls.Add(CreateWebsiteTextBox(site.Name), 1, i);
+                    WebsitesWithUtmLinks.Controls.Add(CreateCopyButton(i), 2, i);
+                }
+                else
+                    WebsitesWithUtmLinks.RowStyles[i] = new RowStyle(SizeType.Percent, 100 / rowCount);
+            }
+        }
+
+
 
         private void toolStripDeleat_Click(object sender, EventArgs e)
         {
@@ -122,7 +146,7 @@ namespace UTM_marker
 
         private void toolStripEdit_Click(object sender, EventArgs e)
         {
-            var utmChangeForm = new UtmEditor(SitesWithLinks,UtmLinks, SitesList, selectedSiteIndex);
+            var utmChangeForm = new UtmEditor(SitesWithLinks,Sources, SitesList, selectedSiteIndex);
             utmChangeForm.Show();
         }
 
@@ -155,7 +179,7 @@ namespace UTM_marker
             string target = "";
             Regex regex = new Regex(pattern);
             string result = regex.Replace(phoneNumber, target);
-            var url = WebsitesWithURL.GetControlFromPosition(1, int.Parse(result)).Text;
+            var url = WebsitesWithUtmLinks.GetControlFromPosition(1, int.Parse(result)).Text;
             Clipboard.SetText($"{url}");
 
         }
@@ -169,7 +193,7 @@ namespace UTM_marker
                 {
                     string webName = web.Name;
                     string url = web.UTMparam.LinkForUser;
-                    WebsitesWithURL.GetControlFromPosition(1, i).Text = url;
+                    WebsitesWithUtmLinks.GetControlFromPosition(1, i).Text = url;
                     i++;
 
                 }
@@ -212,9 +236,9 @@ namespace UTM_marker
 
         private void ResetWebsitesWithUrl()
         {
-            for (int i = 0; i < WebsitesWithURL.RowCount;)
+            for (int i = 0; i < WebsitesWithUtmLinks.RowCount;)
             {
-                WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
+                WebsitesWithUtmLinks.GetControlFromPosition(1, i).Text = "";
                 i++;
             }
         }

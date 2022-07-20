@@ -17,14 +17,14 @@ namespace UTM_marker
     public partial class UtmCreator : Form
     {
         public List<Site> SitesWithLinks { get; set; }
-        List<Website> UtmLinks = new List<Website>();
+        List<Website> Sources = new List<Website>();
         ListBox SitesList = new ListBox();
         public UtmCreator(List<Site> sitesWithLinks,List<Website> utmLinks, ListBox sitesList)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             SitesWithLinks = sitesWithLinks;
-            UtmLinks = utmLinks;
+            Sources = utmLinks;
             SitesList = sitesList;
         }
 
@@ -41,7 +41,7 @@ namespace UTM_marker
                 if(dialogResult==DialogResult.No)
                     return;
             }
-            UtmLinks.ForEach(site => site.UTMparam.AddUTMmark(url));
+            Sources.ForEach(site => site.UTMparam.AddUTMmark(url));
             //try
             //{
             //    Websites.ForEach(site => site.UTMparam.CreateShortLink(site.UTMparam.LinkForApi));
@@ -51,7 +51,7 @@ namespace UTM_marker
             //    MessageBox.Show($"{ex.Message}\nКороткая ссылка не была добавлена");
             //}
             SitesList.Items.Add(courseName);
-            var site = new Site(courseName, url, UtmLinks);
+            var site = new Site(courseName, url, Sources);
             SitesWithLinks.Add(site);
 
             JsonWorker.SerializeJson(SitesWithLinks);

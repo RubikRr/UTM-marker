@@ -33,7 +33,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9A55B50561A54E4285C0730F5EAB8367"
+        "MsmKey" = "8:_96212CF789DD4680B07C43DC629284B1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -207,7 +207,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9A55B50561A54E4285C0730F5EAB8367"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_96212CF789DD4680B07C43DC629284B1"
             {
             "SourcePath" = "8:..\\UTM-marker\\bin\\Release\\net5.0-windows\\jsons\\utmlinks.json"
             "TargetName" = "8:utmlinks.json"
@@ -926,7 +926,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7DD46E3D9D614E1BA90C367428AE5C18"
             {
-            "SourcePath" = "8:..\\UTM-marker\\obj\\Debug\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\UTM-marker\\obj\\Release\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_67814B81987C4C9E935929D3609AA393"

@@ -58,7 +58,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Site.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Site.Location = new System.Drawing.Point(6, 118);
+            this.Site.Location = new System.Drawing.Point(3, 127);
             this.Site.Name = "Site";
             this.Site.Size = new System.Drawing.Size(670, 35);
             this.Site.TabIndex = 5;
@@ -67,7 +67,7 @@
             // 
             this.SiteLabel.AutoSize = true;
             this.SiteLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SiteLabel.Location = new System.Drawing.Point(6, 59);
+            this.SiteLabel.Location = new System.Drawing.Point(3, 68);
             this.SiteLabel.Name = "SiteLabel";
             this.SiteLabel.Size = new System.Drawing.Size(164, 30);
             this.SiteLabel.TabIndex = 7;
@@ -77,7 +77,7 @@
             // 
             this.LinkLabel.AutoSize = true;
             this.LinkLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LinkLabel.Location = new System.Drawing.Point(6, 182);
+            this.LinkLabel.Location = new System.Drawing.Point(3, 191);
             this.LinkLabel.Name = "LinkLabel";
             this.LinkLabel.Size = new System.Drawing.Size(239, 30);
             this.LinkLabel.TabIndex = 8;
@@ -86,7 +86,7 @@
             // ChangeUtmLinks
             // 
             this.ChangeUtmLinks.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ChangeUtmLinks.Location = new System.Drawing.Point(260, 320);
+            this.ChangeUtmLinks.Location = new System.Drawing.Point(257, 329);
             this.ChangeUtmLinks.MaximumSize = new System.Drawing.Size(150, 40);
             this.ChangeUtmLinks.Name = "ChangeUtmLinks";
             this.ChangeUtmLinks.Size = new System.Drawing.Size(150, 40);
@@ -101,7 +101,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Link.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Link.Location = new System.Drawing.Point(6, 240);
+            this.Link.Location = new System.Drawing.Point(3, 249);
             this.Link.Name = "Link";
             this.Link.Size = new System.Drawing.Size(670, 35);
             this.Link.TabIndex = 6;

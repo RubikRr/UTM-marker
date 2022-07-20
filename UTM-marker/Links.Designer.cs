@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.CreateCourse = new System.Windows.Forms.Button();
             this.SitesList = new System.Windows.Forms.ListBox();
-            this.WebsitesWithURL = new System.Windows.Forms.TableLayoutPanel();
+            this.WebsitesWithUtmLinks = new System.Windows.Forms.TableLayoutPanel();
             this.listboxContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
@@ -62,21 +62,21 @@
             this.SitesList.TabIndex = 1;
             this.SitesList.SelectedIndexChanged += new System.EventHandler(this.SitesList_SelectedIndexChanged);
             // 
-            // WebsitesWithURL
+            // WebsitesWithUtmLinks
             // 
-            this.WebsitesWithURL.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.WebsitesWithUtmLinks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.WebsitesWithURL.ColumnCount = 3;
-            this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
-            this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.WebsitesWithURL.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.WebsitesWithURL.Location = new System.Drawing.Point(278, 30);
-            this.WebsitesWithURL.Name = "WebsitesWithURL";
-            this.WebsitesWithURL.RowCount = 1;
-            this.WebsitesWithURL.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.WebsitesWithURL.Size = new System.Drawing.Size(694, 453);
-            this.WebsitesWithURL.TabIndex = 2;
+            this.WebsitesWithUtmLinks.ColumnCount = 3;
+            this.WebsitesWithUtmLinks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
+            this.WebsitesWithUtmLinks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.WebsitesWithUtmLinks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.WebsitesWithUtmLinks.Location = new System.Drawing.Point(278, 30);
+            this.WebsitesWithUtmLinks.Name = "WebsitesWithUtmLinks";
+            this.WebsitesWithUtmLinks.RowCount = 1;
+            this.WebsitesWithUtmLinks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.WebsitesWithUtmLinks.Size = new System.Drawing.Size(694, 453);
+            this.WebsitesWithUtmLinks.TabIndex = 2;
             // 
             // listboxContextMenu
             // 
@@ -99,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 545);
             this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.WebsitesWithURL);
+            this.Controls.Add(this.WebsitesWithUtmLinks);
             this.Controls.Add(this.SitesList);
             this.Controls.Add(this.CreateCourse);
             this.MainMenuStrip = this.menuStrip;
@@ -116,7 +116,7 @@
 
         private System.Windows.Forms.Button CreateCourse;
         private System.Windows.Forms.ListBox SitesList;
-        private System.Windows.Forms.TableLayoutPanel WebsitesWithURL;
+        private System.Windows.Forms.TableLayoutPanel WebsitesWithUtmLinks;
         private System.Windows.Forms.ContextMenuStrip listboxContextMenu;
         private System.Windows.Forms.MenuStrip menuStrip;
     }
