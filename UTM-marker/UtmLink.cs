@@ -32,7 +32,9 @@ namespace UTM_marker
         }
         public void AddUTMmark(string url)
         {
-            LinkForUser=$"{url}?utm_source={Source}&utm_medium={Medium}&utm_campaign={Campaign}";
+           // LinkForUser = $"{url}?utm_source={Source}&utm_medium={Medium}&utm_campaign={Campaign}";
+
+            LinkForUser = $"{url}?utm_source={Source}%26utm_medium={Medium}%26utm_campaign={Campaign}";
             LinkForApi = $"{url}?utm_source={Source}%26utm_medium={Medium}%26utm_campaign={Campaign}";
         }
 

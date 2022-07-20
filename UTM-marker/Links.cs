@@ -17,20 +17,17 @@ namespace UTM_marker
     public partial class Links : Form
     {
         List<Site> SitesWithLinks = new List<Site>();
+        List<Website> UtmLinks = new List<Website>();
         private int selectedSiteIndex;
         public Links()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            var list = JsonWorker.DeserializeUtmLinksJson();
-            foreach (var link in list)
-            {
-                Console.WriteLine($"{link.Name} {link.UTMparam.Source} {link.UTMparam.Medium} {link.UTMparam.Campaign}");
-            }
         }
+
         private void CreateCourse_Click(object sender, EventArgs e)
         {
-            var utmCreateForm = new UtmCreator(SitesWithLinks, SitesList);
+            var utmCreateForm = new UtmCreator(SitesWithLinks,UtmLinks, SitesList);
             utmCreateForm.Show();
         }
 
@@ -49,16 +46,20 @@ namespace UTM_marker
 
         private void toolStripEdit_Click(object sender, EventArgs e)
         {
-            var utmChangeForm = new UtmEditor(SitesWithLinks, SitesList, selectedSiteIndex);
+            var utmChangeForm = new UtmEditor(SitesWithLinks,UtmLinks, SitesList, selectedSiteIndex);
             utmChangeForm.Show();
         }
 
-        private void menuStripEdit_Click(object sender, EventArgs e)
+        private void ShortLinkMenuStripEdit_Click(object sender, EventArgs e)
         {
-            var shortLinkForm= new ShortLinkCreator();
+            var shortLinkForm = new ShortLinkCreator();
             shortLinkForm.Show();
         }
 
+        private void AddSourceMenuStripEdit_Click(object sender, EventArgs e)
+        {
+            
+        }
         private void myListBox_MouseUp(object sender, MouseEventArgs e)
         {
             selectedSiteIndex = -1;
@@ -90,35 +91,94 @@ namespace UTM_marker
             SitesList.MouseUp += myListBox_MouseUp;
         }
 
-        public void MenuStripSettings()
+        public void ShortLinkMenuStripSettings()
         {
             ToolStripMenuItem shortLink = new ToolStripMenuItem("Укоротить ссылку");
             shortLink.Image = Image.FromFile($"icons/external-link.png");
 
-            shortLink.Click+=menuStripEdit_Click;
-          
+            shortLink.Click += ShortLinkMenuStripEdit_Click;
+
             menuStrip.Items.Add(shortLink);
+        }
+
+        public void AddSourceMenuStripSettings()
+        {
+            ToolStripMenuItem addSource = new ToolStripMenuItem("Доабвить источник трафика");
+            addSource.Image = Image.FromFile($"icons/addsource.png");
+
+            addSource.Click += AddSourceMenuStripEdit_Click;
+
+            menuStrip.Items.Add(addSource);
         }
 
         private void Courses_Load(object sender, EventArgs e)
         {
 
             ContextMenySettings();
-            MenuStripSettings();
+            ShortLinkMenuStripSettings();
+            AddSourceMenuStripSettings();
 
-            for (int i = 0; i < WebsitesWithURL.RowCount; i++)
+            UtmLinks = JsonWorker.DeserializeUtmLinksJson();
+            //foreach (var item in UtmLinks)
+            //{
+            //    Console.WriteLine($"{item.Name} {item.UTMparam.Source}");
+            //}
+            var rowCount = UtmLinks.Count();
+            WebsitesWithURL.RowCount = rowCount;
+            for (int i = 0; i < rowCount; i++)
             {
-                WebsitesWithURL.GetControlFromPosition(2, i).Click += CopyButton_Click;
+                var site = UtmLinks[i];
+                if (i == 0)
+                    WebsitesWithURL.RowStyles[0] = new RowStyle(SizeType.Percent, 100 / rowCount);
+                else
+                    WebsitesWithURL.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / rowCount));
+
+                WebsitesWithURL.Controls.Add(CreateWebsiteLable(site.Name), 0, i);
+                WebsitesWithURL.Controls.Add(CreateWebsiteTextBox(site.Name), 1, i);
+                WebsitesWithURL.Controls.Add(CreateCopyButton(i), 2, i);
             }
+
+           
 
             SitesWithLinks = JsonWorker.DeserializeSitesJson();
             SitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
 
         }
+        private Label CreateWebsiteLable(string name)
+        {
+            var websiteLable = new Label();
+            websiteLable.Name = $"{name}label";
+            websiteLable.Text = name;
+            var font = new Font("Segoe UI", 16);
+            websiteLable.Font = font;
+            websiteLable.Size = new Size(180, 30);
+            websiteLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            return websiteLable;
+        }
+
+        private TextBox CreateWebsiteTextBox(string name)
+        {
+            var websiteTextBox = new TextBox();
+            websiteTextBox.Name = $"{name}Url";
+            websiteTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            websiteTextBox.Size = new Size(460, 30);
+            return websiteTextBox;
+        }
+        private Button CreateCopyButton(int i)
+        {
+            var copyButton = new Button();
+            copyButton.Name = $"CopyButton{i}";
+            copyButton.Size = new Size(34, 26);
+            copyButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            copyButton.Click += CopyButton_Click;
+            copyButton.Image = Image.FromFile(@"icons\copybutton.png");
+            copyButton.AutoSizeMode = AutoSizeMode.GrowOnly;
+            return copyButton;
+        }
 
         private void CopyButton_Click(object sender, EventArgs e)
         {
-           
+
             var msg = (Button)sender;
             string phoneNumber = msg.Name;
             string pattern = @"\D";
@@ -139,11 +199,9 @@ namespace UTM_marker
                 {
                     string webName = web.Name;
                     string url = web.UTMparam.LinkForUser;
-                    string shortUrl = web.UTMparam.ShortLink;
                     WebsitesWithURL.GetControlFromPosition(1, i).Text = url;
                     i++;
-                    WebsitesWithURL.GetControlFromPosition(1, i).Text = shortUrl;
-                    i++;
+              
                 }
             }
 
@@ -153,8 +211,6 @@ namespace UTM_marker
         {
             for (int i = 0; i < WebsitesWithURL.RowCount;)
             {
-                WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
-                i++;
                 WebsitesWithURL.GetControlFromPosition(1, i).Text = "";
                 i++;
             }

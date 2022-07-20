@@ -17,13 +17,14 @@ namespace UTM_marker
     public partial class UtmCreator : Form
     {
         public List<Site> SitesWithLinks { get; set; }
-        List<Website> Websites = new List<Website>();
+        List<Website> UtmLinks = new List<Website>();
         ListBox SitesList = new ListBox();
-        public UtmCreator(List<Site> sitesWithLinks, ListBox sitesList)
+        public UtmCreator(List<Site> sitesWithLinks,List<Website> utmLinks, ListBox sitesList)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             SitesWithLinks = sitesWithLinks;
+            UtmLinks = utmLinks;
             SitesList = sitesList;
         }
 
@@ -40,17 +41,17 @@ namespace UTM_marker
                 if(dialogResult==DialogResult.No)
                     return;
             }
-            Websites.ForEach(site => site.UTMparam.AddUTMmark(url));
-            try
-            {
-                Websites.ForEach(site => site.UTMparam.CreateShortLink(site.UTMparam.LinkForApi));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}\nКороткая ссылка не была добавлена");
-            }
+            UtmLinks.ForEach(site => site.UTMparam.AddUTMmark(url));
+            //try
+            //{
+            //    Websites.ForEach(site => site.UTMparam.CreateShortLink(site.UTMparam.LinkForApi));
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"{ex.Message}\nКороткая ссылка не была добавлена");
+            //}
             SitesList.Items.Add(courseName);
-            var site = new Site(courseName, url, Websites);
+            var site = new Site(courseName, url, UtmLinks);
             SitesWithLinks.Add(site);
 
             JsonWorker.SerializeJson(SitesWithLinks);
@@ -61,14 +62,7 @@ namespace UTM_marker
        
         private void UtmCreator_Load(object sender, EventArgs e)
         {
-            var VkSite = new Website("Vk", new UtmLink("myAnalytics", "social", "vk"));
-            var TgSite = new Website("Tg", new UtmLink("myAnalytics", "social", "tg"));
-            var InstSite = new Website("Inst", new UtmLink("myAnalytics", "social", "inst"));
-            var TaplinkSite = new Website("Taplink", new UtmLink("myAnalytics", "organic", "taplink"));
-            var EmailSite = new Website("Email", new UtmLink("myAnalytics", "email", "stepik"));
-            var YouTubeSite = new Website("YouTube", new UtmLink("myAnalytics", "social", "youtube"));
-            var PersonalSite = new Website("Personal", new UtmLink("myAnalytics", "organic", "personal"));
-            Websites.AddRange(new Website[] { VkSite, TgSite, InstSite, TaplinkSite, EmailSite, YouTubeSite, PersonalSite });
+            
         }
     }
 }
