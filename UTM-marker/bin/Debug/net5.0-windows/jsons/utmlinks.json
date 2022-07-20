@@ -1,0 +1,64 @@
+[
+{
+  "Name":"Vk",
+  "UTMparam":
+  {"Source":"vk",
+  "Medium":"organic",
+  "Campaign":"{}"
+  }
+  
+},
+{
+    "Name":"Inst",
+    "UTMParam":{  
+"Source":"inst",
+"Medium":"organic",
+"Campaign":"{}"}},
+  {
+    "Name":"Tg",
+    "UTMParam":
+    {
+		"Source":"tg",
+		"Medium":"organic",
+		"Campaign":"{}"
+    }
+  },
+  {
+    "Name":"Taplink",
+    "UTMParam":
+    {
+      "Source":"taplink",
+"Medium":"organic",
+"Campaign":"{}"
+    }
+  },
+    {
+    "Name":"Stepik",
+    "UTMParam":
+    {
+      "Source":"stepik",
+"Medium":"email",
+"Campaign":"{}"
+    }
+  },
+    {
+    "Name":"YouTube",
+    "UTMParam":
+    {
+      "Source":"youtube",
+"Medium":"organic",
+"Campaign":"{}"
+    }
+  },
+    {
+    "Name":"Personal",
+    "UTMParam":
+    {
+      "Source":"personal",
+"Medium":"organic",
+"Campaign":"{}"
+    }
+  }
+
+  
+]
