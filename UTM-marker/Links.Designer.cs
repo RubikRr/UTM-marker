@@ -39,7 +39,7 @@
             // CreateCourse
             // 
             this.CreateCourse.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.CreateCourse.Location = new System.Drawing.Point(498, 489);
+            this.CreateCourse.Location = new System.Drawing.Point(445, 505);
             this.CreateCourse.Name = "CreateCourse";
             this.CreateCourse.Size = new System.Drawing.Size(151, 44);
             this.CreateCourse.TabIndex = 0;
@@ -72,10 +72,11 @@
             this.WebsitesWithUtmLinks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.WebsitesWithUtmLinks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.WebsitesWithUtmLinks.Location = new System.Drawing.Point(278, 30);
+            this.WebsitesWithUtmLinks.MinimumSize = new System.Drawing.Size(694, 466);
             this.WebsitesWithUtmLinks.Name = "WebsitesWithUtmLinks";
             this.WebsitesWithUtmLinks.RowCount = 1;
             this.WebsitesWithUtmLinks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.WebsitesWithUtmLinks.Size = new System.Drawing.Size(694, 453);
+            this.WebsitesWithUtmLinks.Size = new System.Drawing.Size(694, 466);
             this.WebsitesWithUtmLinks.TabIndex = 2;
             // 
             // listboxContextMenu
@@ -97,13 +98,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 545);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.WebsitesWithUtmLinks);
             this.Controls.Add(this.SitesList);
             this.Controls.Add(this.CreateCourse);
             this.MainMenuStrip = this.menuStrip;
-            this.MinimumSize = new System.Drawing.Size(1000, 530);
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "Links";
             this.Text = "Ссылки";
             this.Load += new System.EventHandler(this.Courses_Load);

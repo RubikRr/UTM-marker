@@ -1,13 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
@@ -15,15 +9,17 @@ namespace UTM_marker
 {
     public partial class Links : Form
     {
-        List<Site> SitesWithLinks = new List<Site>();
-        List<Website> Sources = new List<Website>();
-        private int selectedSiteIndex;
+        List<Site> _sitesWithLinks = new List<Site>();
+        List<Website> _sources = new List<Website>();
+        int _selectedSiteIndex;
 
 
         public Links()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+
+           
         }
 
         private void Courses_Load(object sender, EventArgs e)
@@ -33,41 +29,38 @@ namespace UTM_marker
             ShortLinkMenuStripSettings();
             AddSourceMenuStripSettings();
 
-            Sources = JsonWorker.DeserializeUtmLinksJson();
-            //foreach (var item in UtmLinks)
-            //{
-            //    Console.WriteLine($"{item.Name} {item.UTMparam.Source}");
-            //}
-            var rowCount = Sources.Count();
+            _sources = JsonWorker.DeserializeUtmLinksJson();
+           
+            var rowCount = _sources.Count();
             WebsitesWithUtmLinks.RowCount = rowCount;
             for (int i = 0; i < rowCount; i++)
             {
-                var site = Sources[i];
+                var site = _sources[i];
                 if (i == 0)
                     WebsitesWithUtmLinks.RowStyles[0] = new RowStyle(SizeType.Percent, 100 / rowCount);
                 else
                     WebsitesWithUtmLinks.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / rowCount));
 
-                WebsitesWithUtmLinks.Controls.Add(CreateWebsiteLable(site.Name), 0, i);
+                WebsitesWithUtmLinks.Controls.Add(CreateWebsiteLabel(site.Name), 0, i);
                 WebsitesWithUtmLinks.Controls.Add(CreateWebsiteTextBox(site.Name), 1, i);
                 WebsitesWithUtmLinks.Controls.Add(CreateCopyButton(i), 2, i);
             }
-
-            SitesWithLinks = JsonWorker.DeserializeSitesJson();
-            SitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
+           
+            _sitesWithLinks = JsonWorker.DeserializeSitesJson();
+            _sitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
 
         }
 
-        private Label CreateWebsiteLable(string name)
+        private Label CreateWebsiteLabel(string name)
         {
-            var websiteLable = new Label();
-            websiteLable.Name = $"{name}label";
-            websiteLable.Text = name;
+            var websiteLabel = new Label();
+            websiteLabel.Name = $"{name}label";
+            websiteLabel.Text = name;
             var font = new Font("Segoe UI", 16);
-            websiteLable.Font = font;
-            websiteLable.Size = new Size(180, 30);
-            websiteLable.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            return websiteLable;
+            websiteLabel.Font = font;
+           websiteLabel.AutoSize=true;
+            websiteLabel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            return websiteLabel;
         }
 
         private TextBox CreateWebsiteTextBox(string name)
@@ -75,7 +68,7 @@ namespace UTM_marker
             var websiteTextBox = new TextBox();
             websiteTextBox.Name = $"{name}Url";
             websiteTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            websiteTextBox.Size = new Size(460, 30);
+            websiteTextBox.AutoSize=true;
             return websiteTextBox;
         }
 
@@ -83,7 +76,6 @@ namespace UTM_marker
         {
             var copyButton = new Button();
             copyButton.Name = $"CopyButton{i}";
-            copyButton.Size = new Size(34, 26);
             copyButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             copyButton.Click += CopyButton_Click;
             copyButton.Image = Image.FromFile(@"icons\copybutton.png");
@@ -93,7 +85,7 @@ namespace UTM_marker
 
         private void CreateCourse_Click(object sender, EventArgs e)
         {
-            var utmCreateForm = new UtmCreator(SitesWithLinks,Sources, SitesList);
+            var utmCreateForm = new UtmCreator(_sitesWithLinks,_sources, SitesList);
             utmCreateForm.Show();
         }
 
@@ -105,7 +97,7 @@ namespace UTM_marker
 
         private void AddSourceMenuStripEdit_Click(object sender, EventArgs e)
         {
-            var addSourceForm = new AddTrafficSource(this,Sources, WebsitesWithUtmLinks);
+            var addSourceForm = new AddTrafficSource(this,_sources, WebsitesWithUtmLinks);
             addSourceForm.Show();
         }
 
@@ -117,10 +109,10 @@ namespace UTM_marker
             {
                 if (i == rowCount - 1)
                 {
-                    var site = Sources[rowCount - 1];
+                    var site = _sources[rowCount - 1];
                     WebsitesWithUtmLinks.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / rowCount));
 
-                    WebsitesWithUtmLinks.Controls.Add(CreateWebsiteLable(site.Name), 0, i);
+                    WebsitesWithUtmLinks.Controls.Add(CreateWebsiteLabel(site.Name), 0, i);
                     WebsitesWithUtmLinks.Controls.Add(CreateWebsiteTextBox(site.Name), 1, i);
                     WebsitesWithUtmLinks.Controls.Add(CreateCopyButton(i), 2, i);
                 }
@@ -136,31 +128,31 @@ namespace UTM_marker
             DialogResult dialogResult = MessageBox.Show("Вы действительно хотите удалить сайт?", "Подтверждение", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                SitesWithLinks.RemoveAt(selectedSiteIndex);
+                _sitesWithLinks.RemoveAt(_selectedSiteIndex);
                 SitesList.Items.Clear();
-                JsonWorker.SerializeJson(SitesWithLinks);
-                SitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
+                JsonWorker.SerializeJson(_sitesWithLinks);
+                _sitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
                 ResetWebsitesWithUrl();
             }
         }
 
         private void toolStripEdit_Click(object sender, EventArgs e)
         {
-            var utmChangeForm = new UtmEditor(SitesWithLinks,Sources, SitesList, selectedSiteIndex);
+            var utmChangeForm = new UtmEditor(_sitesWithLinks,_sources, SitesList, _selectedSiteIndex);
             utmChangeForm.Show();
         }
 
        
         private void myListBox_MouseUp(object sender, MouseEventArgs e)
         {
-            selectedSiteIndex = -1;
+            _selectedSiteIndex = -1;
             if (e.Button != MouseButtons.Right) return;
             var index = SitesList.IndexFromPoint(e.Location);
 
             listboxContextMenu.Show(Cursor.Position);
             if (index != ListBox.NoMatches)
             {
-                selectedSiteIndex = index;
+                _selectedSiteIndex = index;
                 SitesList.SetSelected(index, true);
                 listboxContextMenu.Visible = true;
             }
@@ -187,7 +179,7 @@ namespace UTM_marker
         {
             if (SitesList.SelectedIndex != ListBox.NoMatches)
             {
-                Site currentSite = SitesWithLinks[SitesList.SelectedIndex];
+                Site currentSite = _sitesWithLinks[SitesList.SelectedIndex];
                 int i = 0;
                 foreach (var web in currentSite.Websites)
                 {
@@ -226,7 +218,7 @@ namespace UTM_marker
 
         public void AddSourceMenuStripSettings()
         {
-            ToolStripMenuItem addSource = new ToolStripMenuItem("Доабвить источник трафика");
+            ToolStripMenuItem addSource = new ToolStripMenuItem("Добавить источник трафика");
             addSource.Image = Image.FromFile($"icons/addsource.png");
 
             addSource.Click += AddSourceMenuStripEdit_Click;
