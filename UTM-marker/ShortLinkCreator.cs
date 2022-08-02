@@ -20,7 +20,7 @@ namespace UTM_marker
 
         private void CreateUtmLinks_Click(object sender, EventArgs e)
         {
-            string link = Link.Text;
+            string link = Link.Text.Replace("&","%26");
 
             try
             {
