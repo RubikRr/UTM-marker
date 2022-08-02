@@ -14,7 +14,8 @@ namespace UTM_marker
     {
         List<Website> Sources = new List<Website>();
         TableLayoutPanel WebsitesWithUtmLinks= new TableLayoutPanel();
-        Links Link = new Links();
+        Links Link = new Links(); 
+        int oldCountOfSources;
         public AddTrafficSource(Links link,List<Website> sources,TableLayoutPanel websitesWithUtmLinks)
         {
             InitializeComponent();
@@ -22,7 +23,8 @@ namespace UTM_marker
             Link = link;
             Sources=sources;
             WebsitesWithUtmLinks=websitesWithUtmLinks;
-          
+            oldCountOfSources = Sources.Count;
+
         }
 
         private void AddSource_Click(object sender, EventArgs e)
@@ -42,7 +44,8 @@ namespace UTM_marker
 
         private void AddTrafficSource_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Link.ChangeWebsitesTable();
+            if(oldCountOfSources!=Sources.Count)
+                Link.ChangeWebsitesTable();
         }
     }
 }
