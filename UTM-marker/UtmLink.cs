@@ -15,12 +15,12 @@ namespace UTM_marker
     {
         public string Source { get; }
         public string Medium { get; }
-        public string Campaign { get; }
-        [JsonIgnore]
+        public string Campaign { get; private set; }
+
+      
         public string LinkForUser { get; set; }
-        [JsonIgnore]
+     
         public string LinkForApi{ get; set; }
-        [JsonIgnore]
         public string ShortLink { get; set; }
 
         public UtmLink(string source, string medium, string campaign)
@@ -32,11 +32,18 @@ namespace UTM_marker
 
         }
         public void AddUTMmark(string url)
-        {
+        { 
+          
            LinkForUser = $"{url}?utm_source={Source}&utm_medium={Medium}&utm_campaign={Campaign}";
 
            // LinkForUser = $"{url}?utm_source={Source}%26utm_medium={Medium}%26utm_campaign={Campaign}";
             LinkForApi = $"{url}?utm_source={Source}%26utm_medium={Medium}%26utm_campaign={Campaign}";
+        }
+
+        public void ChangeCampaign(string url, string campaign)
+        {
+            Campaign = campaign;
+           AddUTMmark(url);
         }
 
         public void CreateShortLink(string url)

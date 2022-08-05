@@ -17,14 +17,14 @@ namespace UTM_marker
     public partial class UtmCreator : Form
     {
         public List<Site> SitesWithLinks { get; set; }
-        List<Website> Sources = new List<Website>();
-        ListBox SitesList = new ListBox();
-        public UtmCreator(List<Site> sitesWithLinks,List<Website> utmLinks, ListBox sitesList)
+        List<Website> Sources;
+        ListBox SitesList;
+        public UtmCreator(List<Site> sitesWithLinks, ListBox sitesList)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             SitesWithLinks = sitesWithLinks;
-            Sources = utmLinks;
+            Sources =  JsonWorker.DeserializeUtmLinksJson(); ;
             SitesList = sitesList;
         }
 
@@ -54,7 +54,7 @@ namespace UTM_marker
             var site = new Site(courseName, url, Sources);
             SitesWithLinks.Add(site);
 
-            JsonWorker.SerializeJson(SitesWithLinks);
+            JsonWorker.SerializeSitesJson(SitesWithLinks);
             MessageBox.Show("Сайт добавлен");
             this.Close();
 

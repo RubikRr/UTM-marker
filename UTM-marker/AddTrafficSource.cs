@@ -16,12 +16,12 @@ namespace UTM_marker
         TableLayoutPanel WebsitesWithUtmLinks= new TableLayoutPanel();
         Links Link = new Links(); 
         int oldCountOfSources;
-        public AddTrafficSource(Links link,List<Website> sources,TableLayoutPanel websitesWithUtmLinks)
+        public AddTrafficSource(Links link,TableLayoutPanel websitesWithUtmLinks)
         {
             InitializeComponent();
             StartPosition=FormStartPosition.CenterScreen;
             Link = link;
-            Sources=sources;
+            Sources = JsonWorker.DeserializeUtmLinksJson(); ;
             WebsitesWithUtmLinks=websitesWithUtmLinks;
             oldCountOfSources = Sources.Count;
 

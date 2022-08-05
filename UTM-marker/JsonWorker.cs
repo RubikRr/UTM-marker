@@ -11,7 +11,7 @@ namespace UTM_marker
     public static class JsonWorker
     {
 
-        static public void SerializeJson(List<Site> SitesWithLinks)
+        static public void SerializeSitesJson(List<Site> SitesWithLinks)
         {
             using (StreamWriter file = File.CreateText(@"jsons\sites.json"))
             {

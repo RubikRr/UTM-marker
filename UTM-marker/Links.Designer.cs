@@ -107,6 +107,7 @@
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "Links";
             this.Text = "Ссылки";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Links_FormClosing);
             this.Load += new System.EventHandler(this.Courses_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

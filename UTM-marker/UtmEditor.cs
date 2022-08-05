@@ -35,7 +35,7 @@ namespace UTM_marker
             var site = new Site(courseName, url, Sources);
             SitesWithLinks[selectedItemIndex]=(site);
 
-            JsonWorker.SerializeJson(SitesWithLinks);
+            JsonWorker.SerializeSitesJson(SitesWithLinks);
             MessageBox.Show("Сайт был изменен");
             SitesList.SetSelected(selectedItemIndex, true);
             this.Close();

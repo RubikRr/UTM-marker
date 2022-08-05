@@ -85,7 +85,7 @@ namespace UTM_marker
 
         private void CreateCourse_Click(object sender, EventArgs e)
         {
-            var utmCreateForm = new UtmCreator(_sitesWithLinks,_sources, SitesList);
+            var utmCreateForm = new UtmCreator(_sitesWithLinks, SitesList);
             utmCreateForm.Show();
         }
 
@@ -97,19 +97,20 @@ namespace UTM_marker
 
         private void AddSourceMenuStripEdit_Click(object sender, EventArgs e)
         {
-            var addSourceForm = new AddTrafficSource(this,_sources, WebsitesWithUtmLinks);
+            var addSourceForm = new AddTrafficSource(this, WebsitesWithUtmLinks);
             addSourceForm.Show();
         }
 
         public  void ChangeWebsitesTable()
         {
+            _sources = JsonWorker.DeserializeUtmLinksJson();
             WebsitesWithUtmLinks.RowCount++;
             var rowCount = WebsitesWithUtmLinks.RowCount;
             for (int i = 0; i < rowCount; i++)
             {
                 if (i == rowCount - 1)
                 {
-                    var site = _sources[rowCount - 1];
+                    var site = _sources[_sources.Count-1];
                     WebsitesWithUtmLinks.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / rowCount));
 
                     WebsitesWithUtmLinks.Controls.Add(CreateWebsiteLabel(site.Name), 0, i);
@@ -130,7 +131,7 @@ namespace UTM_marker
             {
                 _sitesWithLinks.RemoveAt(_selectedSiteIndex);
                 SitesList.Items.Clear();
-                JsonWorker.SerializeJson(_sitesWithLinks);
+                JsonWorker.SerializeSitesJson(_sitesWithLinks);
                 _sitesWithLinks?.ForEach(course => SitesList.Items.Add(course.Name));
                 ResetWebsitesWithUrl();
             }
@@ -142,7 +143,14 @@ namespace UTM_marker
             utmChangeForm.Show();
         }
 
-       
+        private void toolStripCahngeCampaign_Click(object sender, EventArgs e)
+        {
+            var currentSite = _sitesWithLinks[_selectedSiteIndex];
+            var utmChangeCampaign = new ChangeCampaign(currentSite);
+            utmChangeCampaign.Show();
+        }
+
+
         private void myListBox_MouseUp(object sender, MouseEventArgs e)
         {
             _selectedSiteIndex = -1;
@@ -181,6 +189,7 @@ namespace UTM_marker
             {
                 Site currentSite = _sitesWithLinks[SitesList.SelectedIndex];
                 int i = 0;
+                ResetWebsitesWithUrl();
                 foreach (var web in currentSite.Websites)
                 {
                     string webName = web.Name;
@@ -198,10 +207,15 @@ namespace UTM_marker
             var toolStripMenuItem1 = new ToolStripMenuItem { Text = "Изменить" };
             toolStripMenuItem1.Click += toolStripEdit_Click;
 
+            var toolStripCnageCampaign = new ToolStripMenuItem { Text = "Изменить кампанию" };
+            toolStripCnageCampaign.Click += toolStripCahngeCampaign_Click;
+
+
+
             var toolStripDeleat = new ToolStripMenuItem { Text = "Удалить" };
             toolStripDeleat.Click += toolStripDeleat_Click;
 
-            listboxContextMenu.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripDeleat });
+            listboxContextMenu.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1,toolStripCnageCampaign, toolStripDeleat });
             SitesList.ContextMenuStrip = listboxContextMenu;
             SitesList.MouseUp += myListBox_MouseUp;
         }
@@ -233,6 +247,12 @@ namespace UTM_marker
                 WebsitesWithUtmLinks.GetControlFromPosition(1, i).Text = "";
                 i++;
             }
+        }
+
+        private void Links_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            JsonWorker.SerializeSitesJson(_sitesWithLinks);
+            JsonWorker.SerializeUtmLinksJson(_sources);
         }
     }
 }
